@@ -6,13 +6,12 @@ $(function () {
   $('.code .code-area').on('click', '.code-expand', function () {
     // 向上查找tr元素
     var trElement = $(this).closest('tr');
-    console.log("找到的tr元素:", trElement);
-    if ($(this).parent().hasClass('code-closed')) {
-      $(this).siblings('pre').find('code').show();
-      $(this).parent().removeClass('code-closed');
+    if (trElement.hasClass('code-closed')) {
+      // $(this).siblings('pre').find('code').show();
+      trElement.removeClass('code-closed');
     } else {
-      $(this).siblings('pre').find('code').hide();
-      $(this).parent().addClass('code-closed');
+      // $(this).siblings('pre').find('code').hide();
+      trElement.addClass('code-closed');
     }
   });
 });
