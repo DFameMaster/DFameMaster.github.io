@@ -186,14 +186,23 @@ code {
 }
 
 /* 代码块所在的tr元素样式 */
-tr {
-  transition: height 0.3s ease-in-out;
+figure.highlight table tbody tr {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 /* 当代码块关闭时，设置tr元素的固定高度 */
-tr:has(.code-closed) {
+figure.highlight table tbody tr:has(.code-closed) {
   height: 30px !important;
-  width: auto;
+  max-height: 30px !important;
+  overflow: hidden !important;
+}
+
+/* 确保code-closed类正确应用 */
+.code-closed {
+  height: 0 !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease-in-out;
 }
 
 pre code {
