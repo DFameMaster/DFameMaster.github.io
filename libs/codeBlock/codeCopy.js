@@ -3,8 +3,8 @@
 $(function () {
     var $copyIcon = $('<i class="fas fa-copy code_copy" title="复制代码" aria-hidden="true"></i>')
     var $notice = $('<div class="codecopy_notice"></div>')
-    $('.code-area').eq(1).prepend($copyIcon)
-    $('.code-area').eq(1).prepend($notice)
+    $('.code .code-area').prepend($copyIcon)
+    $('.code .code-area').prepend($notice)
     // “复制成功”字出现
     function copy(text, ctx) {
         if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
