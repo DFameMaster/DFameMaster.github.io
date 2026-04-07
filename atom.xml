@@ -10,13 +10,15 @@
   <rights>All rights reserved 2026, 梧桐</rights>
   <subtitle>梧桐的博客</subtitle>
   <title>梧桐的博客</title>
-  <updated>2026-04-07T12:42:41.110Z</updated>
+  <updated>2026-04-07T12:46:14.959Z</updated>
   <entry>
     <author>
       <name>梧桐</name>
     </author>
     <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
-    <category term="CSS, 定位, 前端" scheme="https://dfamemaster.github.io/tags/CSS-%E5%AE%9A%E4%BD%8D-%E5%89%8D%E7%AB%AF/"/>
+    <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
+    <category term="元素定位" scheme="https://dfamemaster.github.io/tags/%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D/"/>
+    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     <id>https://dfamemaster.github.io/css-positioning/</id>
     <link href="https://dfamemaster.github.io/css-positioning/"/>
     <published>2026-04-07T12:39:49.000Z</published>
@@ -24,7 +26,7 @@
       <![CDATA[<h1 id="CSS元素的定位"><a href="#CSS元素的定位" class="headerlink"]]>
     </summary>
     <title>CSS元素的定位</title>
-    <updated>2026-04-07T12:42:41.110Z</updated>
+    <updated>2026-04-07T12:46:14.959Z</updated>
   </entry>
   <entry>
     <author>
