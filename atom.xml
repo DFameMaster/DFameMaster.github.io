@@ -10,7 +10,25 @@
   <rights>All rights reserved 2026, 梧桐</rights>
   <subtitle>梧桐的博客</subtitle>
   <title>梧桐的博客</title>
-  <updated>2026-04-07T13:02:48.777Z</updated>
+  <updated>2026-04-08T00:56:59.234Z</updated>
+  <entry>
+    <author>
+      <name>梧桐</name>
+    </author>
+    <category term="技术教程" scheme="https://dfamemaster.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    <category term="Hexo" scheme="https://dfamemaster.github.io/tags/Hexo/"/>
+    <category term="matery" scheme="https://dfamemaster.github.io/tags/matery/"/>
+    <category term="问题修复" scheme="https://dfamemaster.github.io/tags/%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/"/>
+    <category term="代码块" scheme="https://dfamemaster.github.io/tags/%E4%BB%A3%E7%A0%81%E5%9D%97/"/>
+    <id>https://dfamemaster.github.io/2026/04/08/hexo-de-matery-zhu-ti-wen-ti-xiu-fu/</id>
+    <link href="https://dfamemaster.github.io/2026/04/08/hexo-de-matery-zhu-ti-wen-ti-xiu-fu/"/>
+    <published>2026-04-08T00:44:44.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="Hexo的matery主题问题修复"><a href="#Hexo的matery主题问题修复" class="headerlink"]]>
+    </summary>
+    <title>Hexo的matery主题问题修复</title>
+    <updated>2026-04-08T00:56:59.234Z</updated>
+  </entry>
   <entry>
     <author>
       <name>梧桐</name>

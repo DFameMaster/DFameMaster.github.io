@@ -5,7 +5,6 @@ $(function () {
 
   $('.code .code-area').prepend($code_expand);
   $('.code .code-area').on('click', '.code-expand', function () {
-    console.log("🚀 ~ $(this).parent().parent():", $(this).parent().parent().siblings('.gutter'))
     if ($(this).parent().hasClass('code-closed')) {
       $(this).parent().parent().siblings('.gutter').show();
       $(this).parent().removeClass('code-closed');
