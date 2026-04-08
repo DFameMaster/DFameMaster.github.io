@@ -10,7 +10,26 @@
   <rights>All rights reserved 2026, 梧桐</rights>
   <subtitle>梧桐的博客</subtitle>
   <title>梧桐的博客</title>
-  <updated>2026-04-08T01:04:35.590Z</updated>
+  <updated>2026-04-08T07:55:22.251Z</updated>
+  <entry>
+    <author>
+      <name>梧桐</name>
+    </author>
+    <category term="前端开发" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    <category term="CSS3" scheme="https://dfamemaster.github.io/tags/CSS3/"/>
+    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="样式" scheme="https://dfamemaster.github.io/tags/%E6%A0%B7%E5%BC%8F/"/>
+    <category term="布局" scheme="https://dfamemaster.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    <category term="动画" scheme="https://dfamemaster.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    <id>https://dfamemaster.github.io/2026/04/08/css3-xin-zeng-de-shu-xing/</id>
+    <link href="https://dfamemaster.github.io/2026/04/08/css3-xin-zeng-de-shu-xing/"/>
+    <published>2026-04-08T03:02:11.000Z</published>
+    <summary>
+      <![CDATA[<h1 id="CSS3-新增属性详解"><a href="#CSS3-新增属性详解" class="headerlink" title="CSS3 新增属性详解"></a>CSS3 新增属性详解</h1><p>CSS3 并非 CSS 的单一官方整体版本，而是]]>
+    </summary>
+    <title>CSS3新增属性详解</title>
+    <updated>2026-04-08T07:55:22.251Z</updated>
+  </entry>
   <entry>
     <author>
       <name>梧桐</name>
@@ -34,9 +53,9 @@
       <name>梧桐</name>
     </author>
     <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
+    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
     <category term="元素定位" scheme="https://dfamemaster.github.io/tags/%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D/"/>
-    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     <id>https://dfamemaster.github.io/css-positioning/</id>
     <link href="https://dfamemaster.github.io/css-positioning/"/>
     <published>2026-04-07T12:39:49.000Z</published>
