@@ -1427,7 +1427,9 @@ thead {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-
+#articleContent .code .line .title {
+  font-size: 1em;
+}
 #articleContent [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: inherit;
