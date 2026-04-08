@@ -356,19 +356,19 @@
                 
                 
                 
-                <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/" title="前端技术: 3">
+                <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" title="技术教程: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">前端技术
+                             chip-active "
+                            style="background-color: #F9EBEA;">技术教程
                         <span class="tag-length">3</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" title="技术教程: 3">
+                <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/" title="前端技术: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">技术教程
+                             chip-default "
+                            style="background-color: #F5EEF8;">前端技术
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -399,11 +399,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Hexo的matery主题问题修复
-本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。
-问题一：代码框显示两个收缩和复制按钮
-问题描述
-
+                                Hexo的matery主题问题修复本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。
+问题一：代码框显示两个收缩和复制按钮问题描述代码框
                             
                         </div>
                         <div class="publish-info">
@@ -461,10 +458,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Docker容器化技术指南
-1. MySQL 容器化部署
-1.1 快速启动命令
-12345678910docker run -d \    --name mysql8 \    -p 3306:3306 \    -e TZ=Asia/Sh
+                                Docker容器化技术指南1. MySQL 容器化部署1.1 快速启动命令12345678910docker run -d \    --name mysql8 \    -p 3306:3306 \    -e TZ=Asia/Shang
                             
                         </div>
                         <div class="publish-info">
@@ -518,14 +512,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                如何使用Hexo在GitHub上部署个人博客
-一、环境准备
-在开始搭建博客之前，需要先准备好以下环境：
+                                如何使用Hexo在GitHub上部署个人博客一、环境准备在开始搭建博客之前，需要先准备好以下环境：
 1. 安装Git
-
 访问 Git官方下载地址
 下载对应操作系统的安装包并安装（默认选项即可）
-验证安装：打开命令行，输入 git --v
+验证安装：打开命令行，输入 git --vers
                             
                         </div>
                         <div class="publish-info">
@@ -585,6 +576,8 @@
             <a href="/about" target="_blank">梧桐</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
             
             <br>
             
@@ -797,6 +790,17 @@ $(function () {
 
     
 
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://dfamemaster.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
     
     
     

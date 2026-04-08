@@ -5,11 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo的matery主题问题修复, 梧桐的博客">
-    <meta name="description" content="Hexo的matery主题问题修复
-本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。
-问题一：代码框显示两个收缩和复制按钮
-问题描述
-">
+    <meta name="description" content="Hexo的matery主题问题修复本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。
+问题一：代码框显示两个收缩和复制按钮问题描述代码框">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -397,60 +394,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Hexo的matery主题问题修复</h1>
-<p>本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。</p>
-<h2 id="问题一：代码框显示两个收缩和复制按钮">问题一：代码框显示两个收缩和复制按钮</h2>
-<h3 id="问题描述">问题描述</h3>
-<p>代码框显示了两个相同的收缩和复制按钮，且两个按钮均不生效。<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571170531-00f5a5c8-e8e6-4566-b9fe-3c90eb4a1366.png?x-oss-process=image%2Fformat%2Cwebp" alt="代码框显示两个收缩和复制按钮"></p>
-<h3 id="原因分析">原因分析</h3>
-<p>通过F12开发者工具查看，发现确实存在两个相同的按钮元素。对源码进行全局搜索<code>code-area</code>，发现是通过jQuery创建和添加元素的，代码如下：<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571258131-86f580f9-4b67-46d5-8200-762315c23cef.png?x-oss-process=image%2Fformat%2Cwebp" alt="页面结构"></p>
+                <h1 id="Hexo的matery主题问题修复"><a href="#Hexo的matery主题问题修复" class="headerlink" title="Hexo的matery主题问题修复"></a>Hexo的matery主题问题修复</h1><p>本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。</p>
+<h2 id="问题一：代码框显示两个收缩和复制按钮"><a href="#问题一：代码框显示两个收缩和复制按钮" class="headerlink" title="问题一：代码框显示两个收缩和复制按钮"></a>问题一：代码框显示两个收缩和复制按钮</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>代码框显示了两个相同的收缩和复制按钮，且两个按钮均不生效。<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571170531-00f5a5c8-e8e6-4566-b9fe-3c90eb4a1366.png?x-oss-process=image/format,webp" alt="代码框显示两个收缩和复制按钮"></p>
+<h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p>通过F12开发者工具查看，发现确实存在两个相同的按钮元素。对源码进行全局搜索<code>code-area</code>，发现是通过jQuery创建和添加元素的，代码如下：<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571258131-86f580f9-4b67-46d5-8200-762315c23cef.png?x-oss-process=image/format,webp" alt="页面结构"></p>
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码块一键复制</span></span><br><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">var</span> $copyIcon = $(</span><br><span class="line">    <span class="string">'&lt;i class="fas fa-copy code_copy" title="复制代码" aria-hidden="true"&gt;&lt;/i&gt;'</span>,</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">var</span> $notice = $(<span class="string">'&lt;div class="codecopy_notice"&gt;&lt;/div&gt;'</span>);</span><br><span class="line">  $(<span class="string">".code-area"</span>).<span class="title function_">prepend</span>($copyIcon);</span><br><span class="line">  $(<span class="string">".code-area"</span>).<span class="title function_">prepend</span>($notice);</span><br><span class="line">  <span class="comment">// 其他代码...</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
 <p>通过对比页面结构，发现存在两个<code>code-area</code>盒子，其中后一个<code>code-area</code>盒子同时被<code>code</code>盒子包裹。</p>
-<h3 id="解决方案">解决方案</h3>
-<p>修改选择器，只对被<code>code</code>包裹的<code>code-area</code>盒子添加元素：</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>修改选择器，只对被<code>code</code>包裹的<code>code-area</code>盒子添加元素：</p>
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码块一键复制</span></span><br><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">var</span> $copyIcon = $(</span><br><span class="line">    <span class="string">'&lt;i class="fas fa-copy code_copy" title="复制代码" aria-hidden="true"&gt;&lt;/i&gt;'</span>,</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">var</span> $notice = $(<span class="string">'&lt;div class="codecopy_notice"&gt;&lt;/div&gt;'</span>);</span><br><span class="line">  $(<span class="string">".code .code-area"</span>).<span class="title function_">prepend</span>($copyIcon);</span><br><span class="line">  $(<span class="string">".code .code-area"</span>).<span class="title function_">prepend</span>($notice);</span><br><span class="line">  <span class="comment">// 其他代码...</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
 <p>同样，对收缩按钮的代码也进行相同修改：</p>
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码块收缩</span></span><br><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">var</span> $code_expand = $(</span><br><span class="line">    <span class="string">'&lt;i class="fas fa-angle-up code-expand" aria-hidden="true"&gt;&lt;/i&gt;'</span>,</span><br><span class="line">  );</span><br><span class="line">  $(<span class="string">".code .code-area"</span>).<span class="title function_">prepend</span>($code_expand);</span><br><span class="line">  <span class="comment">// 其他代码...</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-<p>修复后效果图：<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571521621-8bbf7c32-76ca-40d7-8fc8-07bede34cf6c.png?x-oss-process=image%2Fformat%2Cwebp" alt="修复后效果图"></p>
-<h2 id="问题二：收缩按钮不生效">问题二：收缩按钮不生效</h2>
-<h3 id="问题描述-2">问题描述</h3>
-<p>点击收缩按钮后，代码块没有收缩效果。</p>
-<h3 id="原因分析-2">原因分析</h3>
-<p>查看源码，发现原有代码是使用jQuery监听<code>.code-expand</code>的点击事件，通过控制<code>code</code>的<code>show</code>和<code>hide</code>进行实现的，但是没有生效。问题在于代码查找的是<code>this</code>元素的兄弟节点中的<code>code</code>元素，这在实际页面结构中是找不到的。<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775574998954-8ed63e7e-9d4a-4519-8013-129ebc4826b8.png?x-oss-process=image%2Fformat%2Cwebp" alt="页面结构"></p>
-<h3 id="解决方案-2">解决方案</h3>
-<p>修改收缩按钮的点击事件处理逻辑，同时修改CSS样式以实现更好的收缩效果：</p>
+
+<p>修复后效果图：<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571521621-8bbf7c32-76ca-40d7-8fc8-07bede34cf6c.png?x-oss-process=image/format,webp" alt="修复后效果图"></p>
+<h2 id="问题二：收缩按钮不生效"><a href="#问题二：收缩按钮不生效" class="headerlink" title="问题二：收缩按钮不生效"></a>问题二：收缩按钮不生效</h2><h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>点击收缩按钮后，代码块没有收缩效果。</p>
+<h3 id="原因分析-1"><a href="#原因分析-1" class="headerlink" title="原因分析"></a>原因分析</h3><p>查看源码，发现原有代码是使用jQuery监听<code>.code-expand</code>的点击事件，通过控制<code>code</code>的<code>show</code>和<code>hide</code>进行实现的，但是没有生效。问题在于代码查找的是<code>this</code>元素的兄弟节点中的<code>code</code>元素，这在实际页面结构中是找不到的。<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775574998954-8ed63e7e-9d4a-4519-8013-129ebc4826b8.png?x-oss-process=image/format,webp" alt="页面结构"></p>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h3><p>修改收缩按钮的点击事件处理逻辑，同时修改CSS样式以实现更好的收缩效果：</p>
 <ol>
 <li><strong>修改JavaScript代码</strong>：</li>
 </ol>
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码块收缩</span></span><br><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">var</span> $code_expand = $(</span><br><span class="line">    <span class="string">'&lt;i class="fas fa-angle-up code-expand" aria-hidden="true"&gt;&lt;/i&gt;'</span>,</span><br><span class="line">  );</span><br><span class="line">  $(<span class="string">".code .code-area"</span>).<span class="title function_">prepend</span>($code_expand);</span><br><span class="line">  $(<span class="string">".code .code-area"</span>).<span class="title function_">on</span>(<span class="string">"click"</span>, <span class="string">".code-expand"</span>, <span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">    <span class="comment">// 获取当前code-area元素</span></span><br><span class="line">    <span class="keyword">var</span> codeAreaElement = $(<span class="variable language_">this</span>).<span class="title function_">parent</span>();</span><br><span class="line">    <span class="comment">// 向上查找tr元素</span></span><br><span class="line">    <span class="keyword">var</span> trElement = $(<span class="variable language_">this</span>).<span class="title function_">closest</span>(<span class="string">"tr"</span>);</span><br><span class="line">    <span class="keyword">if</span> (codeAreaElement.<span class="title function_">hasClass</span>(<span class="string">"code-closed"</span>)) {</span><br><span class="line">      codeAreaElement.<span class="title function_">removeClass</span>(<span class="string">"code-closed"</span>);</span><br><span class="line">      trElement.<span class="title function_">removeClass</span>(<span class="string">"code-closed"</span>);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      codeAreaElement.<span class="title function_">addClass</span>(<span class="string">"code-closed"</span>);</span><br><span class="line">      trElement.<span class="title function_">addClass</span>(<span class="string">"code-closed"</span>);</span><br><span class="line">    }</span><br><span class="line">  });</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
 <ol start="2">
 <li><strong>修改CSS样式</strong>：</li>
 </ol>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 原有样式 */</span></span><br><span class="line"><span class="selector-class">.code-closed</span> <span class="selector-class">.code-expand</span> {</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">180deg</span>) <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.code-closed</span> pre<span class="selector-pseudo">::before</span> {</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 修改后样式 */</span></span><br><span class="line"><span class="selector-class">.code-closed</span> <span class="selector-class">.code-expand</span> {</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">180deg</span>) <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.3s</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#articleContent</span> <span class="selector-class">.code</span> <span class="selector-class">.code-closed</span> {</span><br><span class="line">  <span class="attribute">min-width</span>: <span class="number">280px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">0</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease-in-out;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 代码块所在的tr元素样式 */</span></span><br><span class="line"><span class="selector-tag">figure</span><span class="selector-class">.highlight</span> <span class="selector-tag">table</span> <span class="selector-tag">tbody</span> <span class="selector-tag">tr</span> {</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.3s</span> ease-in-out;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 当代码块关闭时，设置tr元素的固定高度 */</span></span><br><span class="line"><span class="selector-tag">figure</span><span class="selector-class">.highlight</span> <span class="selector-tag">table</span> <span class="selector-tag">tbody</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:has</span>(<span class="selector-class">.code-closed</span>) {</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">30px</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">max-height</span>: <span class="number">30px</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden <span class="meta">!important</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>修改后效果图：<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775609140151-ae644bbf-31ab-4067-a5fa-a2b2eb8a94b7.png?x-oss-process=image%2Fformat%2Cwebp" alt="修改后效果图"></p>
-<h2 id="问题三：复制功能不生效">问题三：复制功能不生效</h2>
-<h3 id="问题描述-3">问题描述</h3>
-<p>点击复制按钮后，无法复制代码内容。</p>
-<h3 id="原因分析-3">原因分析</h3>
-<p>查看源码，发现复制功能的实现逻辑是查找<code>.code-area .fa-copy</code>元素的兄弟节点中的<code>pre</code>元素下的<code>code</code>元素，但是根据页面结构，这个查找方式有问题。<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775609427927-cffb10e3-9d86-40cf-96ef-6e222f3847cb.png?x-oss-process=image%2Fformat%2Cwebp" alt="页面结构"></p>
-<h3 id="解决方案-3">解决方案</h3>
-<p>修改复制按钮的点击事件处理逻辑，直接查找兄弟元素<code>pre</code>即可：</p>
+
+<p>修改后效果图：<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775609140151-ae644bbf-31ab-4067-a5fa-a2b2eb8a94b7.png?x-oss-process=image/format,webp" alt="修改后效果图"></p>
+<h2 id="问题三：复制功能不生效"><a href="#问题三：复制功能不生效" class="headerlink" title="问题三：复制功能不生效"></a>问题三：复制功能不生效</h2><h3 id="问题描述-2"><a href="#问题描述-2" class="headerlink" title="问题描述"></a>问题描述</h3><p>点击复制按钮后，无法复制代码内容。</p>
+<h3 id="原因分析-2"><a href="#原因分析-2" class="headerlink" title="原因分析"></a>原因分析</h3><p>查看源码，发现复制功能的实现逻辑是查找<code>.code-area .fa-copy</code>元素的兄弟节点中的<code>pre</code>元素下的<code>code</code>元素，但是根据页面结构，这个查找方式有问题。<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775609427927-cffb10e3-9d86-40cf-96ef-6e222f3847cb.png?x-oss-process=image/format,webp" alt="页面结构"></p>
+<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h3><p>修改复制按钮的点击事件处理逻辑，直接查找兄弟元素<code>pre</code>即可：</p>
 <figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 复制</span></span><br><span class="line">$(<span class="string">".code-area .fa-copy"</span>).<span class="title function_">on</span>(<span class="string">"click"</span>, <span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">var</span> selection = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>();</span><br><span class="line">  <span class="keyword">var</span> range = <span class="variable language_">document</span>.<span class="title function_">createRange</span>();</span><br><span class="line">  range.<span class="title function_">selectNodeContents</span>($(<span class="variable language_">this</span>).<span class="title function_">siblings</span>(<span class="string">"pre"</span>)[<span class="number">0</span>]);</span><br><span class="line">  selection.<span class="title function_">removeAllRanges</span>();</span><br><span class="line">  selection.<span class="title function_">addRange</span>(range);</span><br><span class="line">  <span class="keyword">var</span> text = selection.<span class="title function_">toString</span>();</span><br><span class="line">  <span class="title function_">copy</span>(text, <span class="variable language_">this</span>);</span><br><span class="line">  selection.<span class="title function_">removeAllRanges</span>();</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="修复效果">修复效果</h2>
-<p>修复后，代码块现在只显示一个收缩和复制按钮，且两个按钮均能正常工作：</p>
+
+<h2 id="修复效果"><a href="#修复效果" class="headerlink" title="修复效果"></a>修复效果</h2><p>修复后，代码块现在只显示一个收缩和复制按钮，且两个按钮均能正常工作：</p>
 <ul>
 <li><strong>收缩按钮</strong>：点击后代码块会平滑收缩，只显示代码块的标题部分，再次点击则会平滑展开</li>
-<li><strong>复制按钮</strong>：点击后会复制代码内容，并显示"复制成功"的提示信息</li>
+<li><strong>复制按钮</strong>：点击后会复制代码内容，并显示”复制成功”的提示信息</li>
 </ul>
 <blockquote>
-<p>注：截至2026年4月8日，GitHub上的matery主题源码仍未包含这些修复。<br>
-<img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571009477-bdf2ee15-0b9d-4143-8ff1-4514a9ba004f.png?x-oss-process=image%2Fformat%2Cwebp" alt="源码"></p>
+<p>注：截至2026年4月8日，GitHub上的matery主题源码仍未包含这些修复。<br><img src="https://cdn.nlark.com/yuque/0/2026/png/49420677/1775571009477-bdf2ee15-0b9d-4143-8ff1-4514a9ba004f.png?x-oss-process=image/format,webp" alt="源码"></p>
 </blockquote>
 
                 
@@ -823,6 +805,8 @@
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             
+                <span id="translate">|&nbsp;繁/简：</span><a id="translateLink" href="javascript:translatePage();">繁</a>
+            
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
@@ -1034,6 +1018,17 @@ $(function () {
 
     
 
+    
+        <script type="text/javascript" src="/js/tw_cn.js"></script>
+        <script type="text/javascript">
+          var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+          var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+          var cookieDomain = "https://dfamemaster.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+          var msgToTraditionalChinese = "繁"; //此处可以更改为你想要显示的文字
+          var msgToSimplifiedChinese = "简"; //同上，但两处均不建议更改
+          var translateButtonId = "translateLink"; //默认互换id
+          translateInitilization();
+        </script>
     
     
     
