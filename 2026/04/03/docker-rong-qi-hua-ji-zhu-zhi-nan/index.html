@@ -5,10 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Docker容器化技术指南, 梧桐的博客">
-    <meta name="description" content="Docker容器化技术指南
-1. MySQL 容器化部署
-1.1 快速启动命令
-12345678910docker run -d \    --name mysql8 \    -p 3306:3306 \    -e TZ=Asia/Sh">
+    <meta name="description" content="Docker容器化技术指南1. MySQL 容器化部署1.1 快速启动命令12345678910docker run -d \    --name mysql8 \    -p 3306:3306 \    -e TZ=Asia/Shang">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -392,12 +389,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Docker容器化技术指南</h1>
-<h2 id="1-MySQL-容器化部署">1. MySQL 容器化部署</h2>
-<h3 id="1-1-快速启动命令">1.1 快速启动命令</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --name mysql8 \</span><br><span class="line">    -p 3306:3306 \</span><br><span class="line">    -e TZ=Asia/Shanghai \</span><br><span class="line">    -e MYSQL_ROOT_PASSWORD=your_password \</span><br><span class="line">    -v /opt/mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">    -v /opt/mysql/data:/var/lib/mysql \</span><br><span class="line">    mysql:8.0.34 \</span><br><span class="line">    --character-set-server=utf8mb4 \</span><br><span class="line">    --collation-server=utf8mb4_unicode_ci</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="1-2-参数解析">1.2 参数解析</h3>
-<table>
+                <h1 id="Docker容器化技术指南"><a href="#Docker容器化技术指南" class="headerlink" title="Docker容器化技术指南"></a>Docker容器化技术指南</h1><h2 id="1-MySQL-容器化部署"><a href="#1-MySQL-容器化部署" class="headerlink" title="1. MySQL 容器化部署"></a>1. MySQL 容器化部署</h2><h3 id="1-1-快速启动命令"><a href="#1-1-快速启动命令" class="headerlink" title="1.1 快速启动命令"></a>1.1 快速启动命令</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --name mysql8 \</span><br><span class="line">    -p 3306:3306 \</span><br><span class="line">    -e TZ=Asia/Shanghai \</span><br><span class="line">    -e MYSQL_ROOT_PASSWORD=your_password \</span><br><span class="line">    -v /opt/mysql/conf:/etc/mysql/conf.d \</span><br><span class="line">    -v /opt/mysql/data:/var/lib/mysql \</span><br><span class="line">    mysql:8.0.34 \</span><br><span class="line">    --character-set-server=utf8mb4 \</span><br><span class="line">    --collation-server=utf8mb4_unicode_ci</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="1-2-参数解析"><a href="#1-2-参数解析" class="headerlink" title="1.2 参数解析"></a>1.2 参数解析</h3><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -405,8 +399,7 @@
 <th>扩展知识</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>-p 3306:3306</code></td>
 <td>端口映射（宿主机:容器）</td>
 <td>使用<code>-p 3306:3306/tcp</code>指定协议</td>
@@ -421,26 +414,19 @@
 <td>字符集配置</td>
 <td>推荐使用utf8mb4支持完整Unicode</td>
 </tr>
-</tbody>
-</table>
-<h2 id="2-Docker-核心命令手册">2. Docker 核心命令手册</h2>
-<h3 id="2-1-镜像管理">2.1 镜像管理</h3>
-<h4 id="镜像操作">镜像操作</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:22.04          <span class="comment"># 拉取镜像</span></span><br><span class="line">docker image <span class="built_in">ls</span>                   <span class="comment"># 查看镜像列表</span></span><br><span class="line">docker image prune                <span class="comment"># 清理悬空镜像</span></span><br><span class="line">docker save -o backup.tar nginx   <span class="comment"># 镜像打包</span></span><br><span class="line">docker load -i backup.tar         <span class="comment"># 导入镜像</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="2-2-容器管理">2.2 容器管理</h3>
-<h4 id="生命周期管理">生命周期管理</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --<span class="built_in">rm</span> ubuntu bash    <span class="comment"># 临时测试容器</span></span><br><span class="line">docker start/stop/restart [容器]   <span class="comment"># 启停管理</span></span><br><span class="line">docker <span class="built_in">rm</span> $(docker ps -aq)        <span class="comment"># 批量删除容器</span></span><br><span class="line">docker ps                         <span class="comment"># 查看当前容器的运行状态</span></span><br><span class="line"><span class="comment"># 此时查看不到已经停止运行的容器，可以使用 -a 参数查看所有存在的容器</span></span><br><span class="line"><span class="comment"># 可以使用 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}\t{{.Name}}"进行更美观的查看</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="信息查看">信息查看</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stats                      <span class="comment"># 实时资源监控</span></span><br><span class="line">docker inspect [容器] | grep IP   <span class="comment"># 查看容器IP</span></span><br><span class="line">docker diff [容器]                <span class="comment"># 查看文件改动</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="2-3-运维命令">2.3 运维命令</h3>
-<h4 id="日志管理">日志管理</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f --<span class="built_in">tail</span> 100 [容器]  <span class="comment"># 实时追踪日志</span></span><br><span class="line">docker logs --since 10m [容器]    <span class="comment"># 查看最近10分钟日志</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="故障排查">故障排查</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mysql bash       <span class="comment"># 进入容器终端（使用exit命令退出）</span></span><br><span class="line">docker <span class="built_in">cp</span> file.txt [容器]:/path   <span class="comment"># 宿主机与容器文件互传</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2025/png/49420677/1744082798191-80128ab7-8d33-45c0-a4ea-6e27ccb6aa8c.png?x-oss-process=image%2Fformat%2Cwebp" alt="Docker命令思维导图"></p>
-<h2 id="3-存储与数据卷">3. 存储与数据卷</h2>
-<h3 id="3-1-存储类型对比">3.1 存储类型对比</h3>
-<table>
+</tbody></table>
+<h2 id="2-Docker-核心命令手册"><a href="#2-Docker-核心命令手册" class="headerlink" title="2. Docker 核心命令手册"></a>2. Docker 核心命令手册</h2><h3 id="2-1-镜像管理"><a href="#2-1-镜像管理" class="headerlink" title="2.1 镜像管理"></a>2.1 镜像管理</h3><h4 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:22.04          <span class="comment"># 拉取镜像</span></span><br><span class="line">docker image <span class="built_in">ls</span>                   <span class="comment"># 查看镜像列表</span></span><br><span class="line">docker image prune                <span class="comment"># 清理悬空镜像</span></span><br><span class="line">docker save -o backup.tar nginx   <span class="comment"># 镜像打包</span></span><br><span class="line">docker load -i backup.tar         <span class="comment"># 导入镜像</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-2-容器管理"><a href="#2-2-容器管理" class="headerlink" title="2.2 容器管理"></a>2.2 容器管理</h3><h4 id="生命周期管理"><a href="#生命周期管理" class="headerlink" title="生命周期管理"></a>生命周期管理</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --<span class="built_in">rm</span> ubuntu bash    <span class="comment"># 临时测试容器</span></span><br><span class="line">docker start/stop/restart [容器]   <span class="comment"># 启停管理</span></span><br><span class="line">docker <span class="built_in">rm</span> $(docker ps -aq)        <span class="comment"># 批量删除容器</span></span><br><span class="line">docker ps                         <span class="comment"># 查看当前容器的运行状态</span></span><br><span class="line"><span class="comment"># 此时查看不到已经停止运行的容器，可以使用 -a 参数查看所有存在的容器</span></span><br><span class="line"><span class="comment"># 可以使用 docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}\t{{.Name}}"进行更美观的查看</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="信息查看"><a href="#信息查看" class="headerlink" title="信息查看"></a>信息查看</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stats                      <span class="comment"># 实时资源监控</span></span><br><span class="line">docker inspect [容器] | grep IP   <span class="comment"># 查看容器IP</span></span><br><span class="line">docker diff [容器]                <span class="comment"># 查看文件改动</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-3-运维命令"><a href="#2-3-运维命令" class="headerlink" title="2.3 运维命令"></a>2.3 运维命令</h3><h4 id="日志管理"><a href="#日志管理" class="headerlink" title="日志管理"></a>日志管理</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f --<span class="built_in">tail</span> 100 [容器]  <span class="comment"># 实时追踪日志</span></span><br><span class="line">docker logs --since 10m [容器]    <span class="comment"># 查看最近10分钟日志</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="故障排查"><a href="#故障排查" class="headerlink" title="故障排查"></a>故障排查</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it mysql bash       <span class="comment"># 进入容器终端（使用exit命令退出）</span></span><br><span class="line">docker <span class="built_in">cp</span> file.txt [容器]:/path   <span class="comment"># 宿主机与容器文件互传</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/49420677/1744082798191-80128ab7-8d33-45c0-a4ea-6e27ccb6aa8c.png?x-oss-process=image/format,webp" alt="Docker命令思维导图"></p>
+<h2 id="3-存储与数据卷"><a href="#3-存储与数据卷" class="headerlink" title="3. 存储与数据卷"></a>3. 存储与数据卷</h2><h3 id="3-1-存储类型对比"><a href="#3-1-存储类型对比" class="headerlink" title="3.1 存储类型对比"></a>3.1 存储类型对比</h3><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -448,8 +434,7 @@
 <th>适用场景</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>匿名卷</td>
 <td>自动创建随机命名</td>
 <td>临时测试</td>
@@ -464,18 +449,14 @@
 <td>直接映射宿主机目录</td>
 <td>配置文件管理</td>
 </tr>
-</tbody>
-</table>
-<h3 id="3-2-高级存储方案">3.2 高级存储方案</h3>
-<h4 id="使用只读卷（适合配置文件）">使用只读卷（适合配置文件）</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -v /path/config:/etc/nginx:ro nginx</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="多容器共享数据卷">多容器共享数据卷</h4>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker volume create app_data</span><br><span class="line">docker run -v app_data:/data backend</span><br><span class="line">docker run -v app_data:/data frontend</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2025/png/49420677/1744082820707-699ffb96-fa89-40ed-a6da-0a72449dc4c0.png?x-oss-process=image%2Fformat%2Cwebp" alt="Docker存储方案"></p>
-<h2 id="4-镜像构建实践">4. 镜像构建实践</h2>
-<p>Dockerfile是一个文本文件，其中包含一个个的指令（Instruction），用指令来说明要执行什么操作来构建镜像。Docker可以根据Dockerfile帮我们构建镜像。</p>
-<h3 id="4-1-常见Dockerfile指令">4.1 常见Dockerfile指令</h3>
-<table>
+</tbody></table>
+<h3 id="3-2-高级存储方案"><a href="#3-2-高级存储方案" class="headerlink" title="3.2 高级存储方案"></a>3.2 高级存储方案</h3><h4 id="使用只读卷（适合配置文件）"><a href="#使用只读卷（适合配置文件）" class="headerlink" title="使用只读卷（适合配置文件）"></a>使用只读卷（适合配置文件）</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -v /path/config:/etc/nginx:ro nginx</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="多容器共享数据卷"><a href="#多容器共享数据卷" class="headerlink" title="多容器共享数据卷"></a>多容器共享数据卷</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker volume create app_data</span><br><span class="line">docker run -v app_data:/data backend</span><br><span class="line">docker run -v app_data:/data frontend</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/49420677/1744082820707-699ffb96-fa89-40ed-a6da-0a72449dc4c0.png?x-oss-process=image/format,webp" alt="Docker存储方案"></p>
+<h2 id="4-镜像构建实践"><a href="#4-镜像构建实践" class="headerlink" title="4. 镜像构建实践"></a>4. 镜像构建实践</h2><p>Dockerfile是一个文本文件，其中包含一个个的指令（Instruction），用指令来说明要执行什么操作来构建镜像。Docker可以根据Dockerfile帮我们构建镜像。</p>
+<h3 id="4-1-常见Dockerfile指令"><a href="#4-1-常见Dockerfile指令" class="headerlink" title="4.1 常见Dockerfile指令"></a>4.1 常见Dockerfile指令</h3><table>
 <thead>
 <tr>
 <th>指令</th>
@@ -483,8 +464,7 @@
 <th>示例</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>FROM</td>
 <td>指定基础镜像</td>
 <td><code>FROM centos:6</code></td>
@@ -514,41 +494,35 @@
 <td>镜像中应用的启动命令，容器运行时调用</td>
 <td><code>ENTRYPOINT java -jar xx.jar</code></td>
 </tr>
-</tbody>
-</table>
-<h3 id="4-2-推荐Dockerfile模板">4.2 推荐Dockerfile模板</h3>
-<h4 id="多阶段构建示例">多阶段构建示例</h4>
-<figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"><span class="comment"># 第一阶段：构建阶段（用Maven打包Java应用）</span></span><br><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用包含Maven的官方镜像作为构建环境（版本3.8.6）</span></span><br><span class="line"><span class="comment"># 这个镜像包含JDK和Maven，适合用来编译Java项目</span></span><br><span class="line"><span class="comment"># AS build 给这个构建阶段命名为"build"，方便后续引用</span></span><br><span class="line"><span class="keyword">FROM</span> maven:<span class="number">3.8</span>.<span class="number">6</span> AS build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地项目的源代码复制到镜像的/app/src目录</span></span><br><span class="line"><span class="comment"># 注意：此处的src目录需要与Dockerfile所在目录结构一致</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> src /app/src</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制项目的依赖配置文件（pom.xml）到镜像中</span></span><br><span class="line"><span class="comment"># pom.xml 是Maven项目的核心配置文件，包含项目依赖信息</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> pom.xml /app</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在镜像中执行Maven打包命令</span></span><br><span class="line"><span class="comment"># -f 指定pom.xml文件路径</span></span><br><span class="line"><span class="comment"># clean package 表示先清理旧构建再打包</span></span><br><span class="line"><span class="comment"># 这步会生成项目的jar包在target目录下</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> mvn -f /app/pom.xml clean package</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"><span class="comment"># 第二阶段：运行阶段（用JRE运行应用）</span></span><br><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用更轻量的Eclipse Temurin JRE镜像（仅包含Java运行环境）</span></span><br><span class="line"><span class="comment"># 相比JDK镜像，JRE镜像体积更小，更适合生产环境</span></span><br><span class="line"><span class="keyword">FROM</span> eclipse-temurin:<span class="number">17</span>-jre</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从之前的构建阶段（build）复制打包好的jar文件</span></span><br><span class="line"><span class="comment"># --from=build 表示从名为build的阶段获取文件</span></span><br><span class="line"><span class="comment"># 这里*jar通配符会自动找到target目录下的jar文件</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=build /app/target/*.jar /app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明容器运行时监听的端口（实际映射需要在运行容器时通过-p参数设置）</span></span><br><span class="line"><span class="comment"># 这只是文档说明作用，不是强制绑定</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置容器启动时执行的命令</span></span><br><span class="line"><span class="comment"># 这个特殊参数可以加速Tomcat等需要随机数的应用启动</span></span><br><span class="line"><span class="comment"># -Djava.security.egd=file:/dev/./urandom</span></span><br><span class="line"><span class="comment"># -jar /app.jar 表示运行我们复制的jar包</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">"java"</span>, <span class="string">"-Djava.security.egd=file:/dev/./urandom"</span>, <span class="string">"-jar"</span>, <span class="string">"/app.jar"</span>]</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="4-3-构建优化技巧">4.3 构建优化技巧</h3>
-<ol>
+</tbody></table>
+<h3 id="4-2-推荐Dockerfile模板"><a href="#4-2-推荐Dockerfile模板" class="headerlink" title="4.2 推荐Dockerfile模板"></a>4.2 推荐Dockerfile模板</h3><h4 id="多阶段构建示例"><a href="#多阶段构建示例" class="headerlink" title="多阶段构建示例"></a>多阶段构建示例</h4><figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"><span class="comment"># 第一阶段：构建阶段（用Maven打包Java应用）</span></span><br><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用包含Maven的官方镜像作为构建环境（版本3.8.6）</span></span><br><span class="line"><span class="comment"># 这个镜像包含JDK和Maven，适合用来编译Java项目</span></span><br><span class="line"><span class="comment"># AS build 给这个构建阶段命名为"build"，方便后续引用</span></span><br><span class="line"><span class="keyword">FROM</span> maven:<span class="number">3.8</span>.<span class="number">6</span> AS build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地项目的源代码复制到镜像的/app/src目录</span></span><br><span class="line"><span class="comment"># 注意：此处的src目录需要与Dockerfile所在目录结构一致</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> src /app/src</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制项目的依赖配置文件（pom.xml）到镜像中</span></span><br><span class="line"><span class="comment"># pom.xml 是Maven项目的核心配置文件，包含项目依赖信息</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> pom.xml /app</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在镜像中执行Maven打包命令</span></span><br><span class="line"><span class="comment"># -f 指定pom.xml文件路径</span></span><br><span class="line"><span class="comment"># clean package 表示先清理旧构建再打包</span></span><br><span class="line"><span class="comment"># 这步会生成项目的jar包在target目录下</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> mvn -f /app/pom.xml clean package</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"><span class="comment"># 第二阶段：运行阶段（用JRE运行应用）</span></span><br><span class="line"><span class="comment"># ==========================================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用更轻量的Eclipse Temurin JRE镜像（仅包含Java运行环境）</span></span><br><span class="line"><span class="comment"># 相比JDK镜像，JRE镜像体积更小，更适合生产环境</span></span><br><span class="line"><span class="keyword">FROM</span> eclipse-temurin:<span class="number">17</span>-jre</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从之前的构建阶段（build）复制打包好的jar文件</span></span><br><span class="line"><span class="comment"># --from=build 表示从名为build的阶段获取文件</span></span><br><span class="line"><span class="comment"># 这里*jar通配符会自动找到target目录下的jar文件</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> --from=build /app/target/*.jar /app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 声明容器运行时监听的端口（实际映射需要在运行容器时通过-p参数设置）</span></span><br><span class="line"><span class="comment"># 这只是文档说明作用，不是强制绑定</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置容器启动时执行的命令</span></span><br><span class="line"><span class="comment"># 这个特殊参数可以加速Tomcat等需要随机数的应用启动</span></span><br><span class="line"><span class="comment"># -Djava.security.egd=file:/dev/./urandom</span></span><br><span class="line"><span class="comment"># -jar /app.jar 表示运行我们复制的jar包</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">"java"</span>, <span class="string">"-Djava.security.egd=file:/dev/./urandom"</span>, <span class="string">"-jar"</span>, <span class="string">"/app.jar"</span>]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4-3-构建优化技巧"><a href="#4-3-构建优化技巧" class="headerlink" title="4.3 构建优化技巧"></a>4.3 构建优化技巧</h3><ol>
 <li>使用<code>.dockerignore</code>文件排除无用文件</li>
 <li>多阶段构建减小镜像体积（从3GB优化到300MB）</li>
 <li>固定基础镜像版本（避免自动更新导致的不兼容）</li>
 <li>非root用户运行（增强安全性）：</li>
 </ol>
 <figure class="highlight dockerfile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="language-bash"> groupadd -r appuser &amp;&amp; useradd -r -g appuser appuser</span></span><br><span class="line"><span class="keyword">USER</span> appuser</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="4-4-构建后运行常用命令">4.4 构建后运行常用命令</h3>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker build -t testupd .                    <span class="comment"># 构建容器镜像(在使用该命令时，需要在该jar包所在目录下，且有DockerFile文件)</span></span><br><span class="line">docker run -d --name testudp -p 8081:8081/tcp testudp  <span class="comment"># 运行容器（可以指定使用tcp或者udp协议）</span></span><br><span class="line">docker stop testudp                          <span class="comment"># 停止运行容器</span></span><br><span class="line">docker <span class="built_in">rm</span> testudp                            <span class="comment"># 删除容器</span></span><br><span class="line">docker rmi testudp                            <span class="comment"># 删除容器镜像</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="5-生产环境最佳实践">5. 生产环境最佳实践</h2>
-<h3 id="5-1-容器编排建议">5.1 容器编排建议</h3>
-<h4 id="docker-compose-yml-示例">docker-compose.yml 示例</h4>
-<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.8"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0.34</span></span><br><span class="line">    <span class="attr">deploy:</span></span><br><span class="line">      <span class="attr">resources:</span></span><br><span class="line">        <span class="attr">limits:</span></span><br><span class="line">          <span class="attr">memory:</span> <span class="string">2g</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span> <span class="string">mysqladmin</span> <span class="string">ping</span> <span class="string">-h</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="string">-u</span> <span class="string">root</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="5-2-监控与日志">5.2 监控与日志</h3>
-<ul>
+
+<h3 id="4-4-构建后运行常用命令"><a href="#4-4-构建后运行常用命令" class="headerlink" title="4.4 构建后运行常用命令"></a>4.4 构建后运行常用命令</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker build -t testupd .                    <span class="comment"># 构建容器镜像(在使用该命令时，需要在该jar包所在目录下，且有DockerFile文件)</span></span><br><span class="line">docker run -d --name testudp -p 8081:8081/tcp testudp  <span class="comment"># 运行容器（可以指定使用tcp或者udp协议）</span></span><br><span class="line">docker stop testudp                          <span class="comment"># 停止运行容器</span></span><br><span class="line">docker <span class="built_in">rm</span> testudp                            <span class="comment"># 删除容器</span></span><br><span class="line">docker rmi testudp                            <span class="comment"># 删除容器镜像</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="5-生产环境最佳实践"><a href="#5-生产环境最佳实践" class="headerlink" title="5. 生产环境最佳实践"></a>5. 生产环境最佳实践</h2><h3 id="5-1-容器编排建议"><a href="#5-1-容器编排建议" class="headerlink" title="5.1 容器编排建议"></a>5.1 容器编排建议</h3><h4 id="docker-compose-yml-示例"><a href="#docker-compose-yml-示例" class="headerlink" title="docker-compose.yml 示例"></a>docker-compose.yml 示例</h4><figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">"3.8"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0.34</span></span><br><span class="line">    <span class="attr">deploy:</span></span><br><span class="line">      <span class="attr">resources:</span></span><br><span class="line">        <span class="attr">limits:</span></span><br><span class="line">          <span class="attr">memory:</span> <span class="string">2g</span></span><br><span class="line">    <span class="attr">healthcheck:</span></span><br><span class="line">      <span class="attr">test:</span> <span class="string">mysqladmin</span> <span class="string">ping</span> <span class="string">-h</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="string">-u</span> <span class="string">root</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-2-监控与日志"><a href="#5-2-监控与日志" class="headerlink" title="5.2 监控与日志"></a>5.2 监控与日志</h3><ul>
 <li><strong>日志驱动配置</strong>：</li>
 </ul>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --log-driver=json-file --log-opt max-size=10m --log-opt max-file=3</span><br></pre></td></tr></tbody></table></figure>
+
 <ul>
-<li><strong>推荐监控工具</strong>：
-<ul>
+<li><strong>推荐监控工具</strong>：<ul>
 <li>cAdvisor：容器资源监控</li>
 <li>Prometheus + Grafana：可视化监控</li>
 <li>ELK Stack：日志分析系统</li>
 </ul>
 </li>
 </ul>
-<h2 id="附录：实用资源">附录：实用资源</h2>
-<ol>
+<h2 id="附录：实用资源"><a href="#附录：实用资源" class="headerlink" title="附录：实用资源"></a>附录：实用资源</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://docs.docker.com/">Docker 官方文档</a></li>
 <li><a target="_blank" rel="noopener" href="https://docs.docker.com/develop/dev-best-practices/">Dockerfile 最佳实践</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/opencontainers/image-spec">OCI 镜像规范</a></li>
