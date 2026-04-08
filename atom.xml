@@ -16,8 +16,8 @@
       <name>梧桐</name>
     </author>
     <category term="前端开发" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    <category term="CSS3" scheme="https://dfamemaster.github.io/tags/CSS3/"/>
     <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="CSS3" scheme="https://dfamemaster.github.io/tags/CSS3/"/>
     <category term="样式" scheme="https://dfamemaster.github.io/tags/%E6%A0%B7%E5%BC%8F/"/>
     <category term="布局" scheme="https://dfamemaster.github.io/tags/%E5%B8%83%E5%B1%80/"/>
     <category term="动画" scheme="https://dfamemaster.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
@@ -25,7 +25,8 @@
     <link href="https://dfamemaster.github.io/2026/04/08/css3-xin-zeng-de-shu-xing/"/>
     <published>2026-04-08T03:02:11.000Z</published>
     <summary>
-      <![CDATA[<h1 id="CSS3-新增属性详解"><a href="#CSS3-新增属性详解" class="headerlink" title="CSS3 新增属性详解"></a>CSS3 新增属性详解</h1><p>CSS3 并非 CSS 的单一官方整体版本，而是]]>
+      <![CDATA[<h1>CSS3 新增属性详解</h1>
+<p>CSS3 并非 CSS 的单一官方整体版本，而是 <strong>CSS2.1 之后，W3C 推出的一系列模块化 CSS 规范的行业统称</strong>。不同于 CSS2.1 的单一大版本模式，CSS3 将 CSS]]>
     </summary>
     <title>CSS3新增属性详解</title>
     <updated>2026-04-08T07:55:22.251Z</updated>
@@ -43,7 +44,9 @@
     <link href="https://dfamemaster.github.io/2026/04/08/hexo-de-matery-zhu-ti-wen-ti-xiu-fu/"/>
     <published>2026-04-08T00:44:44.000Z</published>
     <summary>
-      <![CDATA[<h1 id="Hexo的matery主题问题修复"><a href="#Hexo的matery主题问题修复" class="headerlink"]]>
+      <![CDATA[<h1>Hexo的matery主题问题修复</h1>
+<p>本文详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题。</p>
+<h2]]>
     </summary>
     <title>Hexo的matery主题问题修复</title>
     <updated>2026-04-08T01:04:35.590Z</updated>
@@ -53,17 +56,19 @@
       <name>梧桐</name>
     </author>
     <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
-    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
     <category term="元素定位" scheme="https://dfamemaster.github.io/tags/%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D/"/>
+    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     <id>https://dfamemaster.github.io/css-positioning/</id>
     <link href="https://dfamemaster.github.io/css-positioning/"/>
     <published>2026-04-07T12:39:49.000Z</published>
     <summary>
-      <![CDATA[<h1 id="CSS元素的定位"><a href="#CSS元素的定位" class="headerlink"]]>
+      <![CDATA[<h1>CSS元素的定位</h1>
+<p>CSS元素的定位是前端开发中非常重要的概念，它允许我们精确控制元素在页面中的位置。本文将详细介绍CSS中的四种定位方式：相对定位、绝对定位、固定定位和粘性定位。</p>
+<h2]]>
     </summary>
     <title>CSS元素的定位</title>
-    <updated>2026-04-08T02:56:43.251Z</updated>
+    <updated>2026-04-08T08:12:34.032Z</updated>
   </entry>
   <entry>
     <author>
@@ -77,7 +82,10 @@
     <link href="https://dfamemaster.github.io/2026/04/03/docker-rong-qi-hua-ji-zhu-zhi-nan/"/>
     <published>2026-04-03T03:04:48.000Z</published>
     <summary>
-      <![CDATA[<h1 id="Docker容器化技术指南"><a href="#Docker容器化技术指南" class="headerlink" title="Docker容器化技术指南"></a>Docker容器化技术指南</h1><h2 id="1-MySQL-容器化部署"><a]]>
+      <![CDATA[<h1>Docker容器化技术指南</h1>
+<h2 id="1-MySQL-容器化部署">1. MySQL 容器化部署</h2>
+<h3 id="1-1-快速启动命令">1.1 快速启动命令</h3>
+<figure class="highlight]]>
     </summary>
     <title>Docker容器化技术指南</title>
     <updated>2026-04-03T03:17:23.714Z</updated>
@@ -95,7 +103,10 @@
     <link href="https://dfamemaster.github.io/2026/04/02/liu-lan-qi-xuan-ran-yuan-li/"/>
     <published>2026-04-02T03:13:59.000Z</published>
     <summary>
-      <![CDATA[<h1 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h1><h2 id="引言"><a href="#引言" class="headerlink"]]>
+      <![CDATA[<h1>浏览器渲染原理</h1>
+<h2 id="引言">引言</h2>
+<p>作为前端开发者，理解浏览器的渲染原理是优化网页性能的关键。最近在学习过程中，我对浏览器的渲染流程有了更深入的理解，特此记录下来，希望能帮助到其他同学。</p>
+<h2]]>
     </summary>
     <title>浏览器渲染原理</title>
     <updated>2026-04-02T09:26:08.708Z</updated>
@@ -113,7 +124,10 @@
     <link href="https://dfamemaster.github.io/2026/04/02/liu-lan-qi-shi-jian-xun-huan-yuan-li/"/>
     <published>2026-04-02T01:30:29.000Z</published>
     <summary>
-      <![CDATA[<h1 id="浏览器事件循环原理"><a href="#浏览器事件循环原理" class="headerlink" title="浏览器事件循环原理"></a>浏览器事件循环原理</h1><h2 id="引言"><a href="#引言" class="headerlink"]]>
+      <![CDATA[<h1>浏览器事件循环原理</h1>
+<h2 id="引言">引言</h2>
+<p>作为前端开发者，理解浏览器的事件循环机制是掌握 JavaScript 异步编程的关键。最近在学习过程中，我对浏览器的事件循环有了更深入的理解，特此记录下来，希望能帮助到其他同学。</p>
+<h2]]>
     </summary>
     <title>浏览器事件循环原理</title>
     <updated>2026-04-03T01:06:05.279Z</updated>
@@ -130,7 +144,12 @@
     <link href="https://dfamemaster.github.io/2026/04/01/ru-he-shi-yong-hexo-zai-github-shang-bu-shu-ge-ren-bo-ke/"/>
     <published>2026-04-01T12:05:36.000Z</published>
     <summary>
-      <![CDATA[<h1 id="如何使用Hexo在GitHub上部署个人博客"><a href="#如何使用Hexo在GitHub上部署个人博客" class="headerlink"]]>
+      <![CDATA[<h1>如何使用Hexo在GitHub上部署个人博客</h1>
+<h2 id="一、环境准备">一、环境准备</h2>
+<p>在开始搭建博客之前，需要先准备好以下环境：</p>
+<h3 id="1-安装Git">1. 安装Git</h3>
+<ul>
+<li>访问 <a]]>
     </summary>
     <title>如何使用Hexo在GitHub上部署个人博客</title>
     <updated>2026-04-01T13:25:28.568Z</updated>
