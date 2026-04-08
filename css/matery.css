@@ -1430,6 +1430,13 @@ thead {
 #articleContent .code .line .title {
   font-size: 1em;
 }
+.post-charts,
+.title,
+.my-projects .title,
+.my-skills .title,
+.my-gallery .title {
+  font-size: 1em;
+}
 #articleContent [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: inherit;
