@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前端属性描述符详解, 梧桐的博客">
-    <meta name="description" content="前端属性描述符详解
-一、什么是属性描述符？
-属性描述符（Property Descriptor）是 JavaScript 中用于描述对象属性的隐藏特性的配置对象。
-在 JavaScript 中，对象的每个属性都有一组描述其行为的特性，这些特">
+    <meta name="keywords" content="属性描述符详解, 前端开发, JavaScript, HTML, CSS, 编程, 技术分享, 学习笔记">
+    <meta name="description" content="属性描述符详解一、什么是属性描述符？属性描述符（Property Descriptor）是 JavaScript 中用于描述对象属性的隐藏特性的配置对象。
+在 JavaScript 中，对象的每个属性都有一组描述其行为的特性，这些特性默认是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>前端属性描述符详解 | 梧桐的博客</title>
+    <title>属性描述符详解 | 梧桐的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -53,9 +51,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="梧桐的博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="梧桐的博客" type="application/atom+xml">
 </head>
 
 
@@ -153,7 +151,7 @@
         <div class="logo-name">梧桐的博客</div>
         <div class="logo-desc">
             
-            Never really desperate, only the lost of the soul.
+            专注于前端开发、技术分享和编程经验的个人博客，记录学习过程和实践心得，分享优质技术内容。
             
         </div>
     </div>
@@ -294,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">前端属性描述符详解</h1>
+                    <h1 class="description center-align post-title">属性描述符详解</h1>
                 </div>
             </div>
         </div>
@@ -369,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.8k
                 </div>
                 
 
@@ -396,131 +394,109 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>前端属性描述符详解</h1>
-<h2 id="一、什么是属性描述符？">一、什么是属性描述符？</h2>
-<p>属性描述符（Property Descriptor）是 JavaScript 中用于描述对象属性的<strong>隐藏特性</strong>的配置对象。</p>
+                <h1 id="属性描述符详解"><a href="#属性描述符详解" class="headerlink" title="属性描述符详解"></a>属性描述符详解</h1><h2 id="一、什么是属性描述符？"><a href="#一、什么是属性描述符？" class="headerlink" title="一、什么是属性描述符？"></a>一、什么是属性描述符？</h2><p>属性描述符（Property Descriptor）是 JavaScript 中用于描述对象属性的<strong>隐藏特性</strong>的配置对象。</p>
 <p>在 JavaScript 中，对象的每个属性都有一组<strong>描述其行为的特性</strong>，这些特性默认是隐藏的，我们需要通过特定的方法来查看和修改它们。</p>
-<h2 id="二、属性描述符的分类">二、属性描述符的分类</h2>
-<p>属性描述符分为两大类：</p>
+<h2 id="二、属性描述符的分类"><a href="#二、属性描述符的分类" class="headerlink" title="二、属性描述符的分类"></a>二、属性描述符的分类</h2><p>属性描述符分为两大类：</p>
 <ol>
 <li><strong>数据属性描述符</strong>：用于描述普通的数据属性</li>
 <li><strong>访问器属性描述符</strong>：用于描述带有 getter/setter 的属性</li>
 </ol>
-<h2 id="三、如何定义属性描述符">三、如何定义属性描述符</h2>
-<h3 id="3-1-单个属性：Object-defineProperty">3.1 单个属性：Object.defineProperty</h3>
-<p>使用 <code>Object.defineProperty()</code> 方法可以为对象定义或修改单个属性的描述符：</p>
+<h2 id="三、如何定义属性描述符"><a href="#三、如何定义属性描述符" class="headerlink" title="三、如何定义属性描述符"></a>三、如何定义属性描述符</h2><h3 id="3-1-单个属性：Object-defineProperty"><a href="#3-1-单个属性：Object-defineProperty" class="headerlink" title="3.1 单个属性：Object.defineProperty"></a>3.1 单个属性：Object.defineProperty</h3><p>使用 <code>Object.defineProperty()</code> 方法可以为对象定义或修改单个属性的描述符：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5PYmplY3QuZGVmaW5lUHJvcGVydHkg56S65L6LPC90aXRsZT4KPC9oZWFkPgo8Ym9keT4KPHNjcmlwdD4KICBjb25zdCBwZXJzb24gPSB7fTsKICAvLyDlrprkuYnkuIDkuKrlsZ7mgKcKICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uLCAibmFtZSIsIHsKICAgIHZhbHVlOiAi5byg5LiJIiwKICAgIHdyaXRhYmxlOiB0cnVlLAogICAgZW51bWVyYWJsZTogdHJ1ZSwKICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogIH0pOwogIGNvbnNvbGUubG9nKHBlcnNvbi5uYW1lKTsgLy8g6L6T5Ye6OiDlvKDkuIkKICAvLyDlrprkuYnlpJrkuKrlsZ7mgKcKICBPYmplY3QuZGVmaW5lUHJvcGVydGllcyhwZXJzb24sIHsKICAgIGFnZTogewogICAgICB2YWx1ZTogMjUsCiAgICAgIHdyaXRhYmxlOiB0cnVlLAogICAgICBlbnVtZXJhYmxlOiB0cnVlLAogICAgICBjb25maWd1cmFibGU6IHRydWUKICAgIH0sCiAgICBpZDogewogICAgICB2YWx1ZTogIjEyMzQ1NiIsCiAgICAgIHdyaXRhYmxlOiB0cnVlLAogICAgICBlbnVtZXJhYmxlOiB0cnVlLAogICAgICBjb25maWd1cmFibGU6IHRydWUKICAgIH0KICB9KTsKICBjb25zb2xlLmxvZyhwZXJzb24uYWdlKTsgLy8g6L6T5Ye6OiAyNQogIGNvbnNvbGUubG9nKHBlcnNvbi5pZCk7IC8vIOi+k+WHujogMTIzNDU2Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h3 id="3-2-批量属性：Object-defineProperties">3.2 批量属性：Object.defineProperties</h3>
-<p>如果要同时定义多个属性的描述符，可以使用 <code>Object.defineProperties()</code> 方法：</p>
+
+<h3 id="3-2-批量属性：Object-defineProperties"><a href="#3-2-批量属性：Object-defineProperties" class="headerlink" title="3.2 批量属性：Object.defineProperties"></a>3.2 批量属性：Object.defineProperties</h3><p>如果要同时定义多个属性的描述符，可以使用 <code>Object.defineProperties()</code> 方法：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5PYmplY3QuZGVmaW5lUHJvcGVydGllcyDnpLrkvos8L3RpdGxlPgo8L2hlYWQ+Cjxib2R5Pgo8c2NyaXB0PgogIGNvbnN0IHBlcnNvbiA9IHt9OwogIC8vIOaJuemHj+WumuS5ieWkmuS4quWxnuaApwogIE9iamVjdC5kZWZpbmVQcm9wZXJ0aWVzKHBlcnNvbiwgewogICAgbmFtZTogewogICAgICB2YWx1ZTogIuW8oOS4iSIsCiAgICAgIHdyaXRhYmxlOiB0cnVlLAogICAgICBlbnVtZXJhYmxlOiB0cnVlLAogICAgICBjb25maWd1cmFibGU6IHRydWUKICAgIH0sCiAgICBhZ2U6IHsKICAgICAgdmFsdWU6IDI1LAogICAgICB3cml0YWJsZTogdHJ1ZSwKICAgICAgZW51bWVyYWJsZTogdHJ1ZSwKICAgICAgY29uZmlndXJhYmxlOiB0cnVlCiAgICB9LAogICAgZ2VuZGVyOiB7CiAgICAgIHZhbHVlOiAi55S3IiwKICAgICAgd3JpdGFibGU6IHRydWUsCiAgICAgIGVudW1lcmFibGU6IHRydWUsCiAgICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogICAgfQogIH0pOwogIGNvbnNvbGUubG9nKHBlcnNvbi5uYW1lKTsgLy8g5byg5LiJCiAgY29uc29sZS5sb2cocGVyc29uLmFnZSk7IC8vIDI1CiAgY29uc29sZS5sb2cocGVyc29uLmdlbmRlcik7IC8vIOeUtwo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPgo=', '*')"></iframe></div>
-<h3 id="3-3-修改属性描述符：Object-defineProperty">3.3 修改属性描述符：Object.defineProperty</h3>
-<p>如果需要修改一个属性的描述符，可以使用 <code>Object.defineProperty()</code> 方法：</p>
+
+<h3 id="3-3-修改属性描述符：Object-defineProperty"><a href="#3-3-修改属性描述符：Object-defineProperty" class="headerlink" title="3.3 修改属性描述符：Object.defineProperty"></a>3.3 修改属性描述符：Object.defineProperty</h3><p>如果需要修改一个属性的描述符，可以使用 <code>Object.defineProperty()</code> 方法：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5PYmplY3QuZGVmaW5lUHJvcGVydHkg56S65L6LPC90aXRsZT4KPC9oZWFkPgo8Ym9keT4KPHNjcmlwdD4KICBjb25zdCBwZXJzb24gPSB7fTsKICAvLyDnrKzkuIDmrKHlrprkuYnlsZ7mgKcKICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uLCAibmFtZSIsIHsKICAgIHZhbHVlOiAi5byg5LiJIiwKICAgIHdyaXRhYmxlOiB0cnVlLAogICAgZW51bWVyYWJsZTogdHJ1ZSwKICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogIH0pOwogIGNvbnNvbGUubG9nKCLliJ3lp4vlgLw6Iik7CiAgY29uc29sZS5sb2cocGVyc29uLm5hbWUpOyAvLyDlvKDkuIkKICAvLyDkv67mlLnlsZ7mgKfmj4/ov7DnrKbvvIjlsIYgd3JpdGFibGUg5pS55Li6IGZhbHNl77yJCiAgT2JqZWN0LmRlZmluZVByb3BlcnR5KHBlcnNvbiwgIm5hbWUiLCB7CiAgICB3cml0YWJsZTogZmFsc2UKICB9KTsKICAvLyDlsJ3or5Xkv67mlLnlsZ7mgKcKICBwZXJzb24ubmFtZSA9ICLmnY7lm5siOwogIGNvbnNvbGUubG9nKCLkv67mlLnlkI46Iik7CiAgY29uc29sZS5sb2cocGVyc29uLm5hbWUpOyAvLyDku43nhLbmmK/lvKDkuInvvIzlm6DkuLogd3JpdGFibGUg6KKr5pS55Li6IGZhbHNlCjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h2 id="四、数据属性的-4-个特性详解">四、数据属性的 4 个特性详解</h2>
-<p>数据属性有 4 个核心特性，我们一个一个来讲，每个特性都配一个示例。</p>
-<h3 id="4-1-value：属性的值">4.1 value：属性的值</h3>
-<p>这个最简单，就是属性存储的具体值，我们读取属性时返回的就是这个值。</p>
+
+<h2 id="四、数据属性的-4-个特性详解"><a href="#四、数据属性的-4-个特性详解" class="headerlink" title="四、数据属性的 4 个特性详解"></a>四、数据属性的 4 个特性详解</h2><p>数据属性有 4 个核心特性，我们一个一个来讲，每个特性都配一个示例。</p>
+<h3 id="4-1-value：属性的值"><a href="#4-1-value：属性的值" class="headerlink" title="4.1 value：属性的值"></a>4.1 value：属性的值</h3><p>这个最简单，就是属性存储的具体值，我们读取属性时返回的就是这个值。</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT52YWx1ZSDnibnmgKfnpLrkvos8L3RpdGxlPgo8L2hlYWQ+Cjxib2R5Pgo8c2NyaXB0PgogIGNvbnN0IHBlcnNvbiA9IHt9OwogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShwZXJzb24sICJuYW1lIiwgewogIHZhbHVlOiAi5byg5LiJIgogIC8vIOazqOaEj++8mui/memHjOayoeWGmeWFtuS7lueJueaAp++8jOWug+S7rOm7mOiupOmDveaYryBmYWxzZe+8gQogIH0pOwogIGNvbnNvbGUubG9nKHBlcnNvbi5uYW1lKTsgLy8g6L6T5Ye6OiDlvKDkuIkKPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4K', '*')"></iframe></div>
-<h3 id="4-2-writable：是否可修改">4.2 writable：是否可修改</h3>
-<p>控制属性的值是否可以通过 <code>对象.属性 = 值</code> 的方式被修改。</p>
+
+<h3 id="4-2-writable：是否可修改"><a href="#4-2-writable：是否可修改" class="headerlink" title="4.2 writable：是否可修改"></a>4.2 writable：是否可修改</h3><p>控制属性的值是否可以通过 <code>对象.属性 = 值</code> 的方式被修改。</p>
 <p><strong>示例：对比 writable 为 true 和 false 的区别</strong></p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT53cml0YWJsZSDlsZ7mgKflr7nmr5TnpLrkvos8L3RpdGxlPgo8L2hlYWQ+Cjxib2R5Pgo8c2NyaXB0PgogIC8vIOWIm+W7uuS4pOS4quWvueixoei/m+ihjOWvueavlAogIGNvbnN0IHBlcnNvbjEgPSB7fTsgLy8gd3JpdGFibGU6IHRydWXvvIjlj6/kv67mlLnvvIkKICBjb25zdCBwZXJzb24yID0ge307IC8vIHdyaXRhYmxlOiBmYWxzZe+8iOS4jeWPr+S/ruaUue+8iQogIC8vIOiuvue9riBwZXJzb24xIOeahCBuYW1lIOWxnuaAp+S4uuWPr+S/ruaUuQogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShwZXJzb24xLCAibmFtZSIsIHsKICAgIHZhbHVlOiAi5byg5LiJIiwKICAgIHdyaXRhYmxlOiB0cnVlLCAvLyDlj6/kv67mlLkKICAgIGVudW1lcmFibGU6IHRydWUsCiAgICBjb25maWd1cmFibGU6IHRydWUKICB9KTsKICAvLyDorr7nva4gcGVyc29uMiDnmoQgbmFtZSDlsZ7mgKfkuLrkuI3lj6/kv67mlLkKICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uMiwgIm5hbWUiLCB7CiAgICB2YWx1ZTogIuW8oOS4iSIsCiAgICB3cml0YWJsZTogZmFsc2UsIC8vIOS4jeWPr+S/ruaUuQogICAgZW51bWVyYWJsZTogdHJ1ZSwKICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogIH0pOwogIGNvbnNvbGUubG9nKCI9PT0g5Yid5aeL5YC8ID09PSIpOwogIGNvbnNvbGUubG9nKCJwZXJzb24xLm5hbWU6Iik7CiAgY29uc29sZS5sb2cocGVyc29uMS5uYW1lKTsgLy8g5byg5LiJCiAgY29uc29sZS5sb2coInBlcnNvbjIubmFtZToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24yLm5hbWUpOyAvLyDlvKDkuIkKICAvLyDlsJ3or5Xkv67mlLnkuKTkuKrlr7nosaHnmoQgbmFtZSDlsZ7mgKcKICBwZXJzb24xLm5hbWUgPSAi5p2O5ZubIjsKICBwZXJzb24yLm5hbWUgPSAi5p2O5ZubIjsKICBjb25zb2xlLmxvZygiXG49PT0g5L+u5pS55ZCOID09PSIpOwogIGNvbnNvbGUubG9nKCJwZXJzb24xLm5hbWXvvIh3cml0YWJsZTogdHJ1Ze+8iToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24xLm5hbWUpOyAvLyDmnY7lm5vvvIjkv67mlLnmiJDlip/vvIkKICBjb25zb2xlLmxvZygicGVyc29uMi5uYW1l77yId3JpdGFibGU6IGZhbHNl77yJOiIpOwogIGNvbnNvbGUubG9nKHBlcnNvbjIubmFtZSk7IC8vIOW8oOS4ie+8iOS/ruaUueWksei0pe+8iQogIC8vIOa1i+ivleebtOaOpei+k+WHuuWvueixoQogIGNvbnNvbGUubG9nKCJcbj09PSDnm7TmjqXovpPlh7rlr7nosaEgPT09Iik7CiAgY29uc29sZS5sb2coInBlcnNvbjE6Iik7CiAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkocGVyc29uMSkpOyAvLyDovpPlh7rlr7nosaEKICBjb25zb2xlLmxvZygicGVyc29uMjoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShwZXJzb24yKSk7IC8vIOi+k+WHuuWvueixoQo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPgo=', '*')"></iframe></div>
+
 <p><strong>严格模式下的表现</strong></p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT7kuKXmoLzmqKHlvI/kuIsgd3JpdGFibGUg5Li6IGZhbHNlIOekuuS+izwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgInVzZSBzdHJpY3QiOyAvLyDlvIDlkK/kuKXmoLzmqKHlvI8KICBjb25zdCBwZXJzb24gPSB7fTsKICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uLCAibmFtZSIsIHsKICAgIHZhbHVlOiAi5byg5LiJIiwKICAgIHdyaXRhYmxlOiBmYWxzZQogIH0pOwogIGNvbnNvbGUubG9nKCLliJ3lp4vlgLw6Iik7CiAgY29uc29sZS5sb2cocGVyc29uLm5hbWUpOwogIHRyeSB7CiAgICBwZXJzb24ubmFtZSA9ICLmnY7lm5siOyAvLyDov5nph4zkvJrmiqXplJkKICAgIGNvbnNvbGUubG9nKCLkv67mlLnmiJDlip86Iik7CiAgICBjb25zb2xlLmxvZyhwZXJzb24ubmFtZSk7CiAgfSBjYXRjaCAoZXJyb3IpIHsKICAgIGNvbnNvbGUuZXJyb3IoIuS/ruaUueWksei0pToiKTsKICAgIGNvbnNvbGUuZXJyb3IoZXJyb3IubWVzc2FnZSk7CiAgICBjb25zb2xlLmxvZygi5YC85L+d5oyB5LiN5Y+YOiIpOwogICAgY29uc29sZS5sb2cocGVyc29uLm5hbWUpOwogIH0KPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4K', '*')"></iframe></div>
-<h3 id="4-3-enumerable：是否可枚举">4.3 enumerable：是否可枚举</h3>
-<p>控制属性是否可以被 <code>for...in</code> 循环或 <code>Object.keys()</code> 遍历到。</p>
+
+<h3 id="4-3-enumerable：是否可枚举"><a href="#4-3-enumerable：是否可枚举" class="headerlink" title="4.3 enumerable：是否可枚举"></a>4.3 enumerable：是否可枚举</h3><p>控制属性是否可以被 <code>for...in</code> 循环或 <code>Object.keys()</code> 遍历到。</p>
 <p><strong>示例：对比 enumerable 为 true 和 false 的区别</strong></p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5lbnVtZXJhYmxlIOWxnuaAp+WvueavlOekuuS+izwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgLy8g5Yib5bu65Lik5Liq5a+56LGh6L+b6KGM5a+55q+UCiAgY29uc3QgcGVyc29uMSA9IHt9OyAvLyDmiYDmnInlsZ7mgKfpg73lj6/mnprkuL4KICBjb25zdCBwZXJzb24yID0ge307IC8vIGlkIOWxnuaAp+S4jeWPr+aemuS4vgogIC8vIOiuvue9riBwZXJzb24xIOeahOWxnuaAp++8iOWFqOmDqOWPr+aemuS4vu+8iQogIE9iamVjdC5kZWZpbmVQcm9wZXJ0aWVzKHBlcnNvbjEsIHsKICAgIG5hbWU6IHsKICAgICAgdmFsdWU6ICLlvKDkuIkiLAogICAgICB3cml0YWJsZTogdHJ1ZSwKICAgICAgZW51bWVyYWJsZTogdHJ1ZSwgLy8g5Y+v5p6a5Li+CiAgICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogICAgfSwKICAgIGFnZTogewogICAgICB2YWx1ZTogMjUsCiAgICAgIHdyaXRhYmxlOiB0cnVlLAogICAgICBlbnVtZXJhYmxlOiB0cnVlLCAvLyDlj6/mnprkuL4KICAgICAgY29uZmlndXJhYmxlOiB0cnVlCiAgICB9LAogICAgaWQ6IHsKICAgICAgdmFsdWU6ICIxMjM0NTYiLAogICAgICB3cml0YWJsZTogdHJ1ZSwKICAgICAgZW51bWVyYWJsZTogdHJ1ZSwgLy8g5Y+v5p6a5Li+CiAgICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogICAgfQogIH0pOwogIC8vIOiuvue9riBwZXJzb24yIOeahOWxnuaAp++8iGlkIOS4jeWPr+aemuS4vu+8iQogIE9iamVjdC5kZWZpbmVQcm9wZXJ0aWVzKHBlcnNvbjIsIHsKICAgIG5hbWU6IHsKICAgICAgdmFsdWU6ICLlvKDkuIkiLAogICAgICB3cml0YWJsZTogdHJ1ZSwKICAgICAgZW51bWVyYWJsZTogdHJ1ZSwgLy8g5Y+v5p6a5Li+CiAgICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZQogICAgfSwKICAgIGFnZTogewogICAgICB2YWx1ZTogMjUsCiAgICAgIHdyaXRhYmxlOiB0cnVlLAogICAgICBlbnVtZXJhYmxlOiB0cnVlLCAvLyDlj6/mnprkuL4KICAgICAgY29uZmlndXJhYmxlOiB0cnVlCiAgICB9LAogICAgaWQ6IHsKICAgICAgdmFsdWU6ICIxMjM0NTYiLAogICAgICB3cml0YWJsZTogdHJ1ZSwKICAgICAgZW51bWVyYWJsZTogZmFsc2UsIC8vIOS4jeWPr+aemuS4vgogICAgICBjb25maWd1cmFibGU6IHRydWUKICAgIH0KICB9KTsKICBjb25zb2xlLmxvZygiPT09IHBlcnNvbjHvvIjmiYDmnInlsZ7mgKflj6/mnprkuL7vvIk9PT0iKTsKICBjb25zb2xlLmxvZygicGVyc29uMToiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShwZXJzb24xKSk7IC8vIOaYvuekuuWvueixoeeahOWFt+S9k+WGheWuuQogIC8vIOa1i+ivlSAx77yaZm9yLi4uaW4g5b6q546vCiAgY29uc29sZS5sb2coIi0tLSBmb3IuLi5pbiAtLS0iKTsKICBmb3IgKGxldCBrZXkgaW4gcGVyc29uMSkgewogIGNvbnNvbGUubG9nKGtleSk7IC8vIOi+k+WHujogbmFtZSwgYWdlLCBpZAogIH0KICAvLyDmtYvor5UgMu+8mk9iamVjdC5rZXlzKCkKICBjb25zb2xlLmxvZygiLS0tIE9iamVjdC5rZXlzKCkgLS0tIik7CiAgY29uc29sZS5sb2coT2JqZWN0LmtleXMocGVyc29uMSkpOyAvLyDovpPlh7o6IFsibmFtZSIsICJhZ2UiLCAiaWQiXQogIGNvbnNvbGUubG9nKCJcbj09PSBwZXJzb24y77yIaWQg5bGe5oCn5LiN5Y+v5p6a5Li+77yJPT09Iik7CiAgY29uc29sZS5sb2coInBlcnNvbjI6Iik7CiAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkocGVyc29uMikpOyAvLyDmmL7npLrlr7nosaHnmoTlhbfkvZPlhoXlrrkKICAvLyDmtYvor5UgMe+8mmZvci4uLmluIOW+queOrwogIGNvbnNvbGUubG9nKCItLS0gZm9yLi4uaW4gLS0tIik7CiAgZm9yIChsZXQga2V5IGluIHBlcnNvbjIpIHsKICBjb25zb2xlLmxvZyhrZXkpOyAvLyDlj6rkvJrovpPlh7o6IG5hbWUsIGFnZe+8iOS4jeS8mui+k+WHuiBpZO+8iQogIH0KICAvLyDmtYvor5UgMu+8mk9iamVjdC5rZXlzKCkKICBjb25zb2xlLmxvZygiLS0tIE9iamVjdC5rZXlzKCkgLS0tIik7CiAgY29uc29sZS5sb2coT2JqZWN0LmtleXMocGVyc29uMikpOyAvLyDovpPlh7o6IFsibmFtZSIsICJhZ2UiXQogIC8vIOa1i+ivlSAz77ya55u05o6l6K6/6Zeu6YO95Y+v5LulCiAgY29uc29sZS5sb2coIlxuPT09IOebtOaOpeiuv+mXruWxnuaApyA9PT0iKTsKICBjb25zb2xlLmxvZygicGVyc29uMS5pZDoiKTsKICBjb25zb2xlLmxvZyhwZXJzb24xLmlkKTsgLy8gMTIzNDU2CiAgY29uc29sZS5sb2coInBlcnNvbjIuaWQ6Iik7CiAgY29uc29sZS5sb2cocGVyc29uMi5pZCk7IC8vIDEyMzQ1Nu+8iOebtOaOpeiuv+mXruS4jeWPlyBlbnVtZXJhYmxlIOW9seWTje+8iQo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPgo=', '*')"></iframe></div>
-<h3 id="4-4-configurable：是否可配置">4.4 configurable：是否可配置</h3>
-<p>控制属性是否可以被删除，以及是否可以修改属性的其他特性（唯一例外：可以将 writable 从 true 改为 false）。</p>
+
+<h3 id="4-4-configurable：是否可配置"><a href="#4-4-configurable：是否可配置" class="headerlink" title="4.4 configurable：是否可配置"></a>4.4 configurable：是否可配置</h3><p>控制属性是否可以被删除，以及是否可以修改属性的其他特性（唯一例外：可以将 writable 从 true 改为 false）。</p>
 <p><strong>示例：对比 configurable 为 true 和 false 的区别</strong></p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5jb25maWd1cmFibGUg5bGe5oCn5a+55q+U56S65L6LPC90aXRsZT4KPC9oZWFkPgo8Ym9keT4KPHNjcmlwdD4KICAvLyDliJvlu7rkuKTkuKrlr7nosaHov5vooYzlr7nmr5QKICBjb25zdCBwZXJzb24xID0ge307IC8vIGNvbmZpZ3VyYWJsZTogdHJ1Ze+8iOWPr+mFjee9ru+8iQogIGNvbnN0IHBlcnNvbjIgPSB7fTsgLy8gY29uZmlndXJhYmxlOiBmYWxzZe+8iOS4jeWPr+mFjee9ru+8iQogIC8vIOiuvue9riBwZXJzb24xIOeahCBuYW1lIOWxnuaAp+S4uuWPr+mFjee9rgogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShwZXJzb24xLCAibmFtZSIsIHsKICAgIHZhbHVlOiAi5byg5LiJIiwKICAgIHdyaXRhYmxlOiB0cnVlLAogICAgZW51bWVyYWJsZTogdHJ1ZSwKICAgIGNvbmZpZ3VyYWJsZTogdHJ1ZSAvLyDlj6/phY3nva4KICB9KTsKICAvLyDorr7nva4gcGVyc29uMiDnmoQgbmFtZSDlsZ7mgKfkuLrkuI3lj6/phY3nva4KICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uMiwgIm5hbWUiLCB7CiAgICB2YWx1ZTogIuW8oOS4iSIsCiAgICB3cml0YWJsZTogdHJ1ZSwKICAgIGVudW1lcmFibGU6IHRydWUsCiAgICBjb25maWd1cmFibGU6IGZhbHNlIC8vIOS4jeWPr+mFjee9rgogIH0pOwogIGNvbnNvbGUubG9nKCI9PT0g5Yid5aeL5YC8ID09PSIpOwogIGNvbnNvbGUubG9nKCJwZXJzb24xOiIpOwogIGNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KHBlcnNvbjEpKTsgLy8g5pi+56S65a+56LGh55qE5YW35L2T5YaF5a65CiAgY29uc29sZS5sb2coInBlcnNvbjEubmFtZToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24xLm5hbWUpOyAvLyDlvKDkuIkKICBjb25zb2xlLmxvZygicGVyc29uMjoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShwZXJzb24yKSk7IC8vIOaYvuekuuWvueixoeeahOWFt+S9k+WGheWuuQogIGNvbnNvbGUubG9nKCJwZXJzb24yLm5hbWU6Iik7CiAgY29uc29sZS5sb2cocGVyc29uMi5uYW1lKTsgLy8g5byg5LiJCiAgLy8g5rWL6K+VIDHvvJrlsJ3or5XliKDpmaTlsZ7mgKcKICBjb25zb2xlLmxvZygiXG49PT0g5rWL6K+V5Yig6Zmk5bGe5oCnID09PSIpOwogIGRlbGV0ZSBwZXJzb24xLm5hbWU7CiAgZGVsZXRlIHBlcnNvbjIubmFtZTsKICBjb25zb2xlLmxvZygicGVyc29uMToiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShwZXJzb24xKSk7IC8vIOaYvuekuuWvueixoeeahOWFt+S9k+WGheWuuQogIGNvbnNvbGUubG9nKCJwZXJzb24xLm5hbWXvvIhjb25maWd1cmFibGU6IHRydWXvvIk6Iik7CiAgY29uc29sZS5sb2cocGVyc29uMS5uYW1lKTsgLy8gdW5kZWZpbmVk77yI5Yig6Zmk5oiQ5Yqf77yJCiAgY29uc29sZS5sb2coInBlcnNvbjI6Iik7CiAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkocGVyc29uMikpOyAvLyDmmL7npLrlr7nosaHnmoTlhbfkvZPlhoXlrrkKICBjb25zb2xlLmxvZygicGVyc29uMi5uYW1l77yIY29uZmlndXJhYmxlOiBmYWxzZe+8iToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24yLm5hbWUpOyAvLyDlvKDkuInvvIjliKDpmaTlpLHotKXvvIkKICAvLyDph43mlrDorr7nva4gcGVyc29uMSDnmoQgbmFtZSDlsZ7mgKcKICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uMSwgIm5hbWUiLCB7CiAgICB2YWx1ZTogIuW8oOS4iSIsCiAgICB3cml0YWJsZTogdHJ1ZSwKICAgIGVudW1lcmFibGU6IHRydWUsCiAgICBjb25maWd1cmFibGU6IHRydWUKICB9KTsKICAvLyDmtYvor5UgMu+8muWwneivleS/ruaUueWxnuaAp+eJueaApwogIGNvbnNvbGUubG9nKCJcbj09PSDmtYvor5Xkv67mlLnlsZ7mgKfnibnmgKcgPT09Iik7CiAgdHJ5IHsKICAvLyDkv67mlLkgcGVyc29uMSDnmoQgZW51bWVyYWJsZe+8iOWPr+mFjee9ru+8jOW6lOivpeaIkOWKn++8iQogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShwZXJzb24xLCAibmFtZSIsIHsKICAgIGVudW1lcmFibGU6IGZhbHNlCiAgfSk7CiAgY29uc29sZS5sb2coInBlcnNvbjEg5L+u5pS5IGVudW1lcmFibGUg5oiQ5YqfIik7CiAgY29uc29sZS5sb2coInBlcnNvbjE6Iik7CiAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkocGVyc29uMSkpOyAvLyDmmL7npLrlr7nosaHnmoTlhbfkvZPlhoXlrrkKICBjb25zb2xlLmxvZygicGVyc29uMS5uYW1lIOWPr+aemuS4vjoiLCBPYmplY3Qua2V5cyhwZXJzb24xKS5pbmNsdWRlcyAoIm5hbWUiKSk7IC8vIGZhbHNlCiAgfSBjYXRjaCAoZXJyb3IpIHsKICBjb25zb2xlLmVycm9yKCJwZXJzb24xIOS/ruaUuSBlbnVtZXJhYmxlIOWksei0pToiLCBlcnJvci5tZXNzYWdlKTsKICB9CiAgdHJ5IHsKICAgIC8vIOS/ruaUuSBwZXJzb24yIOeahCBlbnVtZXJhYmxl77yI5LiN5Y+v6YWN572u77yM5bqU6K+l5aSx6LSl77yJCiAgICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uMiwgIm5hbWUiLCB7CiAgICAgIGVudW1lcmFibGU6IGZhbHNlCiAgICB9KTsKICAgIGNvbnNvbGUubG9nKCJwZXJzb24yIOS/ruaUuSBlbnVtZXJhYmxlIOaIkOWKnyIpOwogICAgY29uc29sZS5sb2coInBlcnNvbjI6Iik7CiAgICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShwZXJzb24yKSk7IC8vIOaYvuekuuWvueixoeeahOWFt+S9k+WGheWuuQogICAgY29uc29sZS5sb2coInBlcnNvbjIubmFtZSDlj6/mnprkuL46IiwgT2JqZWN0LmtleXMocGVyc29uMikuaW5jbHVkZXMgKCJuYW1lIikpOwogIH0gY2F0Y2ggKGVycm9yKSB7CiAgICBjb25zb2xlLmVycm9yKCJwZXJzb24yIOS/ruaUuSBlbnVtZXJhYmxlIOWksei0pToiLCBlcnJvci5tZXNzYWdlKTsKICAgIGNvbnNvbGUubG9nKCJwZXJzb24yOiIpOwogICAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkocGVyc29uMikpOyAvLyDmmL7npLrlr7nosaHnmoTlhbfkvZPlhoXlrrkKICAgIGNvbnNvbGUubG9nKCJwZXJzb24yLm5hbWUg5Y+v5p6a5Li+OiIsIE9iamVjdC5rZXlzKHBlcnNvbjIpLmluY2x1ZGVzICgibmFtZSIpKTsgLy8gdHJ1Ze+8iOS/neaMgeS4jeWPmO+8iQogIH0KPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4K', '*')"></iframe></div>
-<h2 id="五、访问器属性（getter-和-setter）">五、访问器属性（getter 和 setter）</h2>
-<p>访问器属性不直接存储值，而是通过两个函数来控制属性的读取和设置：</p>
+
+<h2 id="五、访问器属性（getter-和-setter）"><a href="#五、访问器属性（getter-和-setter）" class="headerlink" title="五、访问器属性（getter 和 setter）"></a>五、访问器属性（getter 和 setter）</h2><p>访问器属性不直接存储值，而是通过两个函数来控制属性的读取和设置：</p>
 <ul>
 <li><code>get</code>：读取属性时自动调用的函数，返回值就是属性的读取结果</li>
 <li><code>set</code>：设置属性时自动调用的函数，接收新值作为参数</li>
 </ul>
-<h3 id="5-1-基础示例">5.1 基础示例</h3>
-<p><strong>对比：普通属性 vs 访问器属性</strong></p>
+<h3 id="5-1-基础示例"><a href="#5-1-基础示例" class="headerlink" title="5.1 基础示例"></a>5.1 基础示例</h3><p><strong>对比：普通属性 vs 访问器属性</strong></p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT7mma7pgJrlsZ7mgKcgdnMg6K6/6Zeu5Zmo5bGe5oCn5a+55q+UPC90aXRsZT4KPC9oZWFkPgo8Ym9keT4KPHNjcmlwdD4KICAvLyDliJvlu7rkuKTkuKrlr7nosaHov5vooYzlr7nmr5QKICBjb25zdCBwZXJzb24xID0ge307IC8vIOS9v+eUqOaZrumAmuWxnuaApwogIGNvbnN0IHBlcnNvbjIgPSB7fTsgLy8g5L2/55So6K6/6Zeu5Zmo5bGe5oCnCiAgLy8g6K6+572uIHBlcnNvbjEg55qE5pmu6YCa5bGe5oCnCiAgcGVyc29uMS5uYW1lID0gIuW8oOS4iSI7CiAgLy8g6K6+572uIHBlcnNvbjIg55qE6K6/6Zeu5Zmo5bGe5oCnCiAgcGVyc29uMi5fbmFtZSA9ICLlvKDkuIkiOyAvLyDlhoXpg6jlrZjlgqjlsZ7mgKcKICBPYmplY3QuZGVmaW5lUHJvcGVydHkocGVyc29uMiwgIm5hbWUiLCB7CiAgLy8g6K+75Y+WIG5hbWUg5pe26Ieq5Yqo6LCD55SoCiAgZ2V0OiBmdW5jdGlvbigpIHsKICAgIGNvbnNvbGUubG9nKCJwZXJzb24yOiDor7vlj5bkuoYgbmFtZSDlsZ7mgKciKTsKICAgIHJldHVybiB0aGlzLl9uYW1lOwogIH0sCiAgLy8g6K6+572uIG5hbWUg5pe26Ieq5Yqo6LCD55SoCiAgc2V0OiBmdW5jdGlvbihuZXdWYWx1ZSkgewogICAgY29uc29sZS5sb2coInBlcnNvbjI6IOiuvue9ruS6hiBuYW1lIOWxnuaAp+S4ujoiKTsKICAgIGNvbnNvbGUubG9nKG5ld1ZhbHVlKTsKICAgIHRoaXMuX25hbWUgPSBuZXdWYWx1ZTsKICB9LAogIGVudW1lcmFibGU6IHRydWUsCiAgY29uZmlndXJhYmxlOiB0cnVlCiAgfSk7CiAgY29uc29sZS5sb2coIj09PSDliJ3lp4vlgLwgPT09Iik7CiAgY29uc29sZS5sb2coInBlcnNvbjE6Iik7CiAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkocGVyc29uMSkpOyAvLyDmmL7npLrlr7nosaHnmoTlhbfkvZPlhoXlrrkKICBjb25zb2xlLmxvZygicGVyc29uMS5uYW1l77yI5pmu6YCa5bGe5oCn77yJOiIpOwogIGNvbnNvbGUubG9nKHBlcnNvbjEubmFtZSk7IC8vIOW8oOS4iQogIGNvbnNvbGUubG9nKCJwZXJzb24yOiIpOwogIGNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KHBlcnNvbjIpKTsgLy8g5pi+56S65a+56LGh55qE5YW35L2T5YaF5a65CiAgY29uc29sZS5sb2coInBlcnNvbjIubmFtZe+8iOiuv+mXruWZqOWxnuaAp++8iToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24yLm5hbWUpOyAvLyDlvKDkuIkKICBjb25zb2xlLmxvZygiXG49PT0g5L+u5pS55bGe5oCnID09PSIpOwogIHBlcnNvbjEubmFtZSA9ICLmnY7lm5siOwogIHBlcnNvbjIubmFtZSA9ICLmnY7lm5siOwogIGNvbnNvbGUubG9nKCJwZXJzb24xOiIpOwogIGNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KHBlcnNvbjEpKTsgLy8g5pi+56S65a+56LGh55qE5YW35L2T5YaF5a65CiAgY29uc29sZS5sb2coInBlcnNvbjEubmFtZe+8iOaZrumAmuWxnuaAp++8iToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24xLm5hbWUpOyAvLyDmnY7lm5sKICBjb25zb2xlLmxvZygicGVyc29uMjoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShwZXJzb24yKSk7IC8vIOaYvuekuuWvueixoeeahOWFt+S9k+WGheWuuQogIGNvbnNvbGUubG9nKCJwZXJzb24yLm5hbWXvvIjorr/pl67lmajlsZ7mgKfvvIk6Iik7CiAgY29uc29sZS5sb2cocGVyc29uMi5uYW1lKTsgLy8g5p2O5ZubCiAgLy8g5rWL6K+V55u05o6l6K6/6Zeu5YaF6YOo5bGe5oCnCiAgY29uc29sZS5sb2coIlxuPT09IOebtOaOpeiuv+mXruWGhemDqOWxnuaApyA9PT0iKTsKICBjb25zb2xlLmxvZygicGVyc29uMi5fbmFtZToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24yLl9uYW1lKTsgLy8g5p2O5Zub77yI5Y+v5Lul55u05o6l6K6/6Zeu5YaF6YOo5a2Y5YKo5bGe5oCn77yJCjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h3 id="5-2-进阶：用-setter-做数据验证">5.2 进阶：用 setter 做数据验证</h3>
-<p>访问器属性的一个常见用途是在设置值时做校验，保证数据的合法性。</p>
+
+<h3 id="5-2-进阶：用-setter-做数据验证"><a href="#5-2-进阶：用-setter-做数据验证" class="headerlink" title="5.2 进阶：用 setter 做数据验证"></a>5.2 进阶：用 setter 做数据验证</h3><p>访问器属性的一个常见用途是在设置值时做校验，保证数据的合法性。</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5zZXR0ZXIg5pWw5o2u6aqM6K+B56S65L6LPC90aXRsZT4KPC9oZWFkPgo8Ym9keT4KPHNjcmlwdD4KICBjb25zdCBwZXJzb24gPSB7CiAgICBfYWdlOiAyNQogIH07CiAgT2JqZWN0LmRlZmluZVByb3BlcnR5KHBlcnNvbiwgImFnZSIsIHsKICAgIGdldDogZnVuY3Rpb24oKSB7CiAgICAgIHJldHVybiB0aGlzLl9hZ2U7CiAgICB9LAogICAgc2V0OiBmdW5jdGlvbihuZXdBZ2UpIHsKICAgICAgLy8g6aqM6K+B77ya5bm06b6E5b+F6aG75piv5pWw5a2X77yM5LiU5ZyoIDAtMTIwIOS5i+mXtAogICAgICBpZiAodHlwZW9mIG5ld0FnZSAhPT0gIm51bWJlciIgfHwgbmV3QWdlIDwgMCB8fCBuZXdBZ2UgPiAxMjApIHsKICAgICAgICBjb25zb2xlLmxvZygi5peg5pWI55qE5bm06b6E77yBIik7CiAgICAgICAgcmV0dXJuOwogICAgICB9CiAgICAgIHRoaXMuX2FnZSA9IG5ld0FnZTsKICAgIH0KICB9KTsKICAvLyDmtYvor5UgMe+8muiuvue9ruacieaViOW5tOm+hAogIHBlcnNvbi5hZ2UgPSAzMDsKICBjb25zb2xlLmxvZyhwZXJzb24uYWdlKTsgLy8g6L6T5Ye6OiAzMAogIC8vIOa1i+ivlSAy77ya6K6+572u5peg5pWI5bm06b6ECiAgcGVyc29uLmFnZSA9IC01OyAvLyDovpPlh7o6IOaXoOaViOeahOW5tOm+hO+8gQogIGNvbnNvbGUubG9nKHBlcnNvbi5hZ2UpOyAvLyDovpPlh7o6IDMw77yI5rKh5pyJ5Y+Y5YyW77yJCjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h2 id="六、如何查看属性描述符？">六、如何查看属性描述符？</h2>
-<p>我们可以使用 JS 内置的方法，查看某个属性完整的描述符配置。</p>
-<h3 id="6-1-查看单个属性的描述符">6.1 查看单个属性的描述符</h3>
-<p>使用 <code>Object.getOwnPropertyDescriptor()</code>：</p>
+
+<h2 id="六、如何查看属性描述符？"><a href="#六、如何查看属性描述符？" class="headerlink" title="六、如何查看属性描述符？"></a>六、如何查看属性描述符？</h2><p>我们可以使用 JS 内置的方法，查看某个属性完整的描述符配置。</p>
+<h3 id="6-1-查看单个属性的描述符"><a href="#6-1-查看单个属性的描述符" class="headerlink" title="6.1 查看单个属性的描述符"></a>6.1 查看单个属性的描述符</h3><p>使用 <code>Object.getOwnPropertyDescriptor()</code>：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuafpeeci+WNleS4quWxnuaAp+aPj+i/sOespjwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgY29uc3QgcGVyc29uID0gewogICAgbmFtZTogIuW8oOS4iSIsCiAgICBhZ2U6IDI1CiAgfTsKICAvLyDmn6XnnIsgbmFtZSDlsZ7mgKfnmoTmj4/ov7DnrKYKICBjb25zdCBkZXNjID0gT2JqZWN0LmdldE93blByb3BlcnR5RGVzY3JpcHRvcihwZXJzb24sICJuYW1lIik7CiAgY29uc29sZS5sb2coIm5hbWUg5bGe5oCn55qE5o+P6L+w56ymOiIpOwogIGNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KGRlc2MsIG51bGwsIDIpKTsKICAvLyDovpPlh7o6CiAgLy8gewogIC8vICAgInZhbHVlIjogIuW8oOS4iSIsCiAgLy8gICAid3JpdGFibGUiOiB0cnVlLAogIC8vICAgImVudW1lcmFibGUiOiB0cnVlLAogIC8vICAgImNvbmZpZ3VyYWJsZSI6IHRydWUKICAvLyB9Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h3 id="6-2-查看对象所有自身属性的描述符">6.2 查看对象所有自身属性的描述符</h3>
-<p>使用 <code>Object.getOwnPropertyDescriptors()</code>：</p>
+
+<h3 id="6-2-查看对象所有自身属性的描述符"><a href="#6-2-查看对象所有自身属性的描述符" class="headerlink" title="6.2 查看对象所有自身属性的描述符"></a>6.2 查看对象所有自身属性的描述符</h3><p>使用 <code>Object.getOwnPropertyDescriptors()</code>：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuafpeeci+aJgOacieWxnuaAp+aPj+i/sOespjwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgY29uc3QgcGVyc29uID0gewogICAgbmFtZTogIuW8oOS4iSIsCiAgICBhZ2U6IDI1CiAgfTsKICAvLyDmn6XnnIvmiYDmnInlsZ7mgKfnmoTmj4/ov7DnrKYKICBjb25zdCBhbGxEZXNjcyA9IE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3JzKHBlcnNvbik7CiAgY29uc29sZS5sb2coIuaJgOacieWxnuaAp+eahOaPj+i/sOespjoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShhbGxEZXNjcywgbnVsbCwgMikpOwogIC8vIOi+k+WHujoKICAvLyB7CiAgLy8gIm5hbWUiOiB7CiAgLy8gInZhbHVlIjogIuW8oOS4iSIsCiAgLy8gIndyaXRhYmxlIjogdHJ1ZSwKICAvLyAiZW51bWVyYWJsZSI6IHRydWUsCiAgLy8gImNvbmZpZ3VyYWJsZSI6IHRydWUKICAvLyB9LAogIC8vICJhZ2UiOiB7CiAgLy8gInZhbHVlIjogMjUsCiAgLy8gIndyaXRhYmxlIjogdHJ1ZSwKICAvLyAiZW51bWVyYWJsZSI6IHRydWUsCiAgLy8gImNvbmZpZ3VyYWJsZSI6IHRydWUKICAvLyB9CiAgLy8gfQo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPgo=', '*')"></iframe></div>
-<h2 id="七、属性描述符的常见应用场景">七、属性描述符的常见应用场景</h2>
-<h3 id="7-1-实现只读常量属性">7.1 实现只读常量属性</h3>
-<div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWunueOsOWPquivu+W4uOmHj+WxnuaApzwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgY29uc3QgY29uZmlnID0gewogICAgYXBpVXJsOiAiaHR0cHM6Ly9hcGkuZXhhbXBsZS5jb20iCiAgfTsKICAvLyDlsIYgYXBpVXJsIOiuvuS4uue7neWvueWPquivuwogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShjb25maWcsICJhcGlVcmwiLCB7CiAgICB3cml0YWJsZTogZmFsc2UsCiAgICBjb25maWd1cmFibGU6IGZhbHNlCiAgfSk7CiAgY29uZmlnLmFwaVVybCA9ICJodHRwczovL290aGVyLmNvbSI7IC8vIOS/ruaUueaXoOaViAogIGNvbnNvbGUubG9nKGNvbmZpZy5hcGlVcmwpOyAvLyDovpPlh7o6IGh0dHBzOi8vYXBpLmV4YW1wbGUuY29tCjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h3 id="7-2-实现计算属性">7.2 实现计算属性</h3>
-<div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWunueOsOiuoeeul+WxnuaApzwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgdmFyIHJlY3QgPSB7CiAgICB3aWR0aDogMTAsCiAgICBoZWlnaHQ6IDUKICB9OwogIC8vIOiuoeeul+mdouenr++8iOWPquivu++8jOmaj+WuvemrmOiHquWKqOabtOaWsO+8iQogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShyZWN0LCAiYXJlYSIsIHsKICAgIGdldDogZnVuY3Rpb24oKSB7CiAgICAgIHJldHVybiB0aGlzLndpZHRoICogdGhpcy5oZWlnaHQ7CiAgICB9LAogICAgZW51bWVyYWJsZTogdHJ1ZQogIH0pOwogIC8vIOa1i+ivleWIneWni+mdouenrwogIGNvbnNvbGUubG9nKCLliJ3lp4vpnaLnp686Iik7CiAgY29uc29sZS5sb2cocmVjdC5hcmVhKTsKICAvLyDkv67mlLnlrr3luqbvvIzpnaLnp6/kvJroh6rliqjmm7TmlrAKICByZWN0LndpZHRoID0gMjA7CiAgY29uc29sZS5sb2coIuS/ruaUueWuveW6puWQjumdouenrzoiKTsKICBjb25zb2xlLmxvZyhyZWN0LmFyZWEpOwogIC8vIOS/ruaUuemrmOW6pu+8jOmdouenr+S8muiHquWKqOabtOaWsAogIHJlY3QuaGVpZ2h0ID0gODsKICBjb25zb2xlLmxvZygi5L+u5pS56auY5bqm5ZCO6Z2i56evOiIpOwogIGNvbnNvbGUubG9nKHJlY3QuYXJlYSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
-<h3 id="7-3-实现数据监听与响应式">7.3 实现数据监听与响应式</h3>
-<p>这也是 Vue2 响应式系统的核心原理，通过 get/set 监听数据的读写，在数据变化时触发视图更新。</p>
+
+<h2 id="七、属性描述符的常见应用场景"><a href="#七、属性描述符的常见应用场景" class="headerlink" title="七、属性描述符的常见应用场景"></a>七、属性描述符的常见应用场景</h2><h3 id="7-1-实现只读常量属性"><a href="#7-1-实现只读常量属性" class="headerlink" title="7.1 实现只读常量属性"></a>7.1 实现只读常量属性</h3><div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWunueOsOWPquivu+W4uOmHj+WxnuaApzwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgY29uc3QgY29uZmlnID0gewogICAgYXBpVXJsOiAiaHR0cHM6Ly9hcGkuZXhhbXBsZS5jb20iCiAgfTsKICAvLyDlsIYgYXBpVXJsIOiuvuS4uue7neWvueWPquivuwogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShjb25maWcsICJhcGlVcmwiLCB7CiAgICB3cml0YWJsZTogZmFsc2UsCiAgICBjb25maWd1cmFibGU6IGZhbHNlCiAgfSk7CiAgY29uZmlnLmFwaVVybCA9ICJodHRwczovL290aGVyLmNvbSI7IC8vIOS/ruaUueaXoOaViAogIGNvbnNvbGUubG9nKGNvbmZpZy5hcGlVcmwpOyAvLyDovpPlh7o6IGh0dHBzOi8vYXBpLmV4YW1wbGUuY29tCjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
+
+<h3 id="7-2-实现计算属性"><a href="#7-2-实现计算属性" class="headerlink" title="7.2 实现计算属性"></a>7.2 实现计算属性</h3><div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWunueOsOiuoeeul+WxnuaApzwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgdmFyIHJlY3QgPSB7CiAgICB3aWR0aDogMTAsCiAgICBoZWlnaHQ6IDUKICB9OwogIC8vIOiuoeeul+mdouenr++8iOWPquivu++8jOmaj+WuvemrmOiHquWKqOabtOaWsO+8iQogIE9iamVjdC5kZWZpbmVQcm9wZXJ0eShyZWN0LCAiYXJlYSIsIHsKICAgIGdldDogZnVuY3Rpb24oKSB7CiAgICAgIHJldHVybiB0aGlzLndpZHRoICogdGhpcy5oZWlnaHQ7CiAgICB9LAogICAgZW51bWVyYWJsZTogdHJ1ZQogIH0pOwogIC8vIOa1i+ivleWIneWni+mdouenrwogIGNvbnNvbGUubG9nKCLliJ3lp4vpnaLnp686Iik7CiAgY29uc29sZS5sb2cocmVjdC5hcmVhKTsKICAvLyDkv67mlLnlrr3luqbvvIzpnaLnp6/kvJroh6rliqjmm7TmlrAKICByZWN0LndpZHRoID0gMjA7CiAgY29uc29sZS5sb2coIuS/ruaUueWuveW6puWQjumdouenrzoiKTsKICBjb25zb2xlLmxvZyhyZWN0LmFyZWEpOwogIC8vIOS/ruaUuemrmOW6pu+8jOmdouenr+S8muiHquWKqOabtOaWsAogIHJlY3QuaGVpZ2h0ID0gODsKICBjb25zb2xlLmxvZygi5L+u5pS56auY5bqm5ZCO6Z2i56evOiIpOwogIGNvbnNvbGUubG9nKHJlY3QuYXJlYSk7Cjwvc2NyaXB0PgoKPC9ib2R5Pgo8L2h0bWw+Cg==', '*')"></iframe></div>
+
+<h3 id="7-3-实现数据监听与响应式"><a href="#7-3-实现数据监听与响应式" class="headerlink" title="7.3 实现数据监听与响应式"></a>7.3 实现数据监听与响应式</h3><p>这也是 Vue2 响应式系统的核心原理，通过 get/set 监听数据的读写，在数据变化时触发视图更新。</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWunueOsOaVsOaNruebkeWQrOS4juWTjeW6lOW8jzwvdGl0bGU+CjwvaGVhZD4KPGJvZHk+CjxzY3JpcHQ+CiAgY29uc3QgZGF0YSA9IHsKICAgIF9tc2c6ICLliJ3lp4vlgLwiCiAgfTsKICAvLyDnm5HlkKxtc2flsZ7mgKfnmoTlj5jljJYKICBPYmplY3QuZGVmaW5lUHJvcGVydHkoZGF0YSwgIm1zZyIsIHsKICAgIGdldCgpIHsKICAgICAgcmV0dXJuIHRoaXMuX21zZzsKICAgIH0sCiAgICBzZXQobmV3VmFsKSB7CiAgICAgIHRoaXMuX21zZyA9IG5ld1ZhbDsKICAgICAgLy8g5pWw5o2u5Y+Y5YyW5pe277yM6Ieq5Yqo5omn6KGM5pu05paw5pON5L2cCiAgICAgIGNvbnNvbGUubG9nKCLmlbDmja7lj5jljJbkuobvvIzmm7TmlrDop4blm77vvIHmlrDlgLzvvJoiKTsKICAgICAgY29uc29sZS5sb2cobmV3VmFsKTsKICAgIH0KICB9KTsKICBkYXRhLm1zZyA9ICLmlrDnmoTlgLwiOyAvLyDovpPlh7o6IOaVsOaNruWPmOWMluS6hu+8jOabtOaWsOinhuWbvu+8geaWsOWAvO+8miDmlrDnmoTlgLwKPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4K', '*')"></iframe></div>
-<h2 id="八、避坑注意事项-核心提醒">八、避坑注意事项 &amp; 核心提醒</h2>
-<h3 id="8-1-必记：Object-defineProperty-的默认值大坑">8.1 必记：Object.defineProperty () 的默认值大坑</h3>
-<p>当你使用 <code>Object.defineProperty()</code> 定义属性时，没有手动设置的特性，默认值全都是 <code>false</code>，和字面量赋值的默认值完全相反！</p>
+
+<h2 id="八、注意事项"><a href="#八、注意事项" class="headerlink" title="八、注意事项"></a>八、注意事项</h2><h3 id="8-1-Object-defineProperty-的默认值"><a href="#8-1-Object-defineProperty-的默认值" class="headerlink" title="8.1 Object.defineProperty () 的默认值"></a>8.1 Object.defineProperty () 的默认值</h3><p>当你使用 <code>Object.defineProperty()</code> 定义属性时，没有手动设置的特性，默认值全都是 <code>false</code>，和字面量赋值的默认值完全相反！</p>
 <p><strong>对比：字面量赋值 vs Object.defineProperty 不指定特性</strong></p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CiAgPG1ldGEgY2hhcnNldD0idXRmLTgiPgogIDx0aXRsZT5PYmplY3QuZGVmaW5lUHJvcGVydHkg6buY6K6k5YC85a+55q+U56S65L6LPC90aXRsZT4KPC9oZWFkPgo8Ym9keT4KPHNjcmlwdD4KICAvLyDliJvlu7rkuKTkuKrlr7nosaHov5vooYzlr7nmr5QKICBjb25zdCBwZXJzb24xID0ge307IC8vIOS9v+eUqOWtl+mdoumHj+i1i+WAvAogIGNvbnN0IHBlcnNvbjIgPSB7fTsgLy8g5L2/55SoIE9iamVjdC5kZWZpbmVQcm9wZXJ0eSDkuI3mjIflrprnibnmgKcKICAvLyDlrZfpnaLph4/otYvlgLwKICBwZXJzb24xLm5hbWUgPSAi5byg5LiJIjsKICAvLyBPYmplY3QuZGVmaW5lUHJvcGVydHkg5LiN5oyH5a6a54m55oCnCiAgT2JqZWN0LmRlZmluZVByb3BlcnR5KHBlcnNvbjIsICJuYW1lIiwgewogICAgdmFsdWU6ICLlvKDkuIkiCiAgICAvLyDms6jmhI/vvJrov5nph4zmsqHlhpkgd3JpdGFibGXjgIFlbnVtZXJhYmxl44CBY29uZmlndXJhYmxl77yM5a6D5Lus6buY6K6k6YO95pivIGZhbHNl77yBCiAgfSk7CiAgY29uc29sZS5sb2coIj09PSDliJ3lp4vlgLwgPT09Iik7CiAgY29uc29sZS5sb2coInBlcnNvbjEubmFtZToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24xLm5hbWUpOyAvLyDlvKDkuIkKICBjb25zb2xlLmxvZygicGVyc29uMi5uYW1lOiIpOwogIGNvbnNvbGUubG9nKHBlcnNvbjIubmFtZSk7IC8vIOW8oOS4iQogIC8vIOa1i+ivlSAx77ya5L+u5pS55bGe5oCnCiAgY29uc29sZS5sb2coIlxuPT09IOa1i+ivleS/ruaUueWxnuaApyA9PT0iKTsKICBwZXJzb24xLm5hbWUgPSAi5p2O5ZubIjsKICBwZXJzb24yLm5hbWUgPSAi5p2O5ZubIjsKICBjb25zb2xlLmxvZygicGVyc29uMS5uYW1l77yI5a2X6Z2i6YeP6LWL5YC877yJOiIpOwogIGNvbnNvbGUubG9nKHBlcnNvbjEubmFtZSk7IC8vIOadjuWbm++8iOS/ruaUueaIkOWKn++8iQogIGNvbnNvbGUubG9nKCJwZXJzb24yLm5hbWXvvIhPYmplY3QuZGVmaW5lUHJvcGVydHnvvIk6Iik7CiAgY29uc29sZS5sb2cocGVyc29uMi5uYW1lKTsgLy8g5byg5LiJ77yI5L+u5pS55aSx6LSl77yJCiAgLy8g5rWL6K+VIDLvvJrpgY3ljoblsZ7mgKcKICBjb25zb2xlLmxvZygiXG49PT0g5rWL6K+V6YGN5Y6G5bGe5oCnID09PSIpOwogIGNvbnNvbGUubG9nKCJwZXJzb24xIOWPr+aemuS4vuWxnuaApzoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShPYmplY3Qua2V5cyhwZXJzb24xKSkpOyAvLyBbIm5hbWUiXQogIGNvbnNvbGUubG9nKCJwZXJzb24yIOWPr+aemuS4vuWxnuaApzoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShPYmplY3Qua2V5cyhwZXJzb24yKSkpOyAvLyBbXQogIC8vIOa1i+ivlSAz77ya5Yig6Zmk5bGe5oCnCiAgY29uc29sZS5sb2coIlxuPT09IOa1i+ivleWIoOmZpOWxnuaApyA9PT0iKTsKICBkZWxldGUgcGVyc29uMS5uYW1lOwogIGRlbGV0ZSBwZXJzb24yLm5hbWU7CiAgY29uc29sZS5sb2coInBlcnNvbjEubmFtZe+8iOWtl+mdoumHj+i1i+WAvO+8iToiKTsKICBjb25zb2xlLmxvZyhwZXJzb24xLm5hbWUpOyAvLyB1bmRlZmluZWTvvIjliKDpmaTmiJDlip/vvIkKICBjb25zb2xlLmxvZygicGVyc29uMi5uYW1l77yIT2JqZWN0LmRlZmluZVByb3BlcnR577yJOiIpOwogIGNvbnNvbGUubG9nKHBlcnNvbjIubmFtZSk7IC8vIOW8oOS4ie+8iOWIoOmZpOWksei0pe+8iQogIC8vIOafpeeci+S4pOS4quWxnuaAp+eahOaPj+i/sOespgogIGNvbnNvbGUubG9nKCJcbj09PSDmn6XnnIvlsZ7mgKfmj4/ov7DnrKYgPT09Iik7CiAgY29uc29sZS5sb2coInBlcnNvbjEubmFtZSDmj4/ov7DnrKY6Iik7CiAgY29uc29sZS5sb2coSlNPTi5zdHJpbmdpZnkoT2JqZWN0LmdldE93blByb3BlcnR5RGVzY3JpcHRvcihwZXJzb24xLCAgICJuYW1lIikpKTsKICBjb25zb2xlLmxvZygicGVyc29uMi5uYW1lIOaPj+i/sOespjoiKTsKICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yKHBlcnNvbjIsICJuYW1lIikpKTsKPC9zY3JpcHQ+Cgo8L2JvZHk+CjwvaHRtbD4K', '*')"></iframe></div>
-<p><strong>正确写法</strong>：需要什么特性，就手动明确写出来，绝对不要依赖默认值！</p>
-<h3 id="8-2-致命：configurable-false-是不可逆的！">8.2 致命：configurable: false 是不可逆的！</h3>
-<p>一旦你把某个属性的 <code>configurable</code> 设为 <code>false</code>，就再也无法把它改回 <code>true</code> 了，这是一个单向操作，不可逆！</p>
-<h3 id="8-3-误区：writable-false-不是绝对的-“只读”">8.3 误区：writable: false 不是绝对的 “只读”</h3>
-<p>当 <code>writable: false</code> 时，直接用 <code>对象.属性 = 值</code> 的方式赋值会失败，但如果 <code>configurable: true</code>，你依然可以通过 <code>Object.defineProperty()</code> 来修改属性的 <code>value</code>！</p>
-<h3 id="8-4-语法报错：数据属性和访问器属性不能混用！">8.4 语法报错：数据属性和访问器属性不能混用！</h3>
-<p>属性描述符分为数据属性描述符和访问器属性描述符，两者是互斥的，不能在同一个属性的描述符里同时出现！</p>
+
+<p><strong>正确写法</strong>：需要什么特性，就手动明确写出来，不要依赖默认值！</p>
+<h3 id="8-2-configurable-false-是不可逆的！"><a href="#8-2-configurable-false-是不可逆的！" class="headerlink" title="8.2 configurable: false 是不可逆的！"></a>8.2 configurable: false 是不可逆的！</h3><p>一旦你把某个属性的 <code>configurable</code> 设为 <code>false</code>，就再也无法把它改回 <code>true</code> 了，这是一个单向操作，不可逆！</p>
+<h3 id="8-3-writable-false-不是绝对的-“只读”"><a href="#8-3-writable-false-不是绝对的-“只读”" class="headerlink" title="8.3 writable: false 不是绝对的 “只读”"></a>8.3 writable: false 不是绝对的 “只读”</h3><p>当 <code>writable: false</code> 时，直接用 <code>对象.属性 = 值</code> 的方式赋值会失败，但如果 <code>configurable: true</code>，你依然可以通过 <code>Object.defineProperty()</code> 来修改属性的 <code>value</code>！</p>
+<h3 id="8-4-数据属性和访问器属性不能混用！"><a href="#8-4-数据属性和访问器属性不能混用！" class="headerlink" title="8.4 数据属性和访问器属性不能混用！"></a>8.4 数据属性和访问器属性不能混用！</h3><p>属性描述符分为数据属性描述符和访问器属性描述符，两者是互斥的，不能在同一个属性的描述符里同时出现！</p>
 <ul>
 <li>数据属性专属配置：value、writable</li>
 <li>访问器属性专属配置：get、set</li>
 </ul>
-<h3 id="8-5-遍历坑：for…in-会遍历原型链上的可枚举属性">8.5 遍历坑：for…in 会遍历原型链上的可枚举属性</h3>
-<p><code>enumerable: false</code> 只会让当前属性不被遍历，但如果你的对象原型上有可枚举的属性，<code>for...in</code> 循环依然会遍历到！</p>
+<h3 id="8-5-for…in-会遍历原型链上的可枚举属性"><a href="#8-5-for…in-会遍历原型链上的可枚举属性" class="headerlink" title="8.5 for…in 会遍历原型链上的可枚举属性"></a>8.5 for…in 会遍历原型链上的可枚举属性</h3><p><code>enumerable: false</code> 只会让当前属性不被遍历，但如果你的对象原型上有可枚举的属性，<code>for...in</code> 循环依然会遍历到！</p>
 <p><strong>正确写法</strong>：用 <code>hasOwnProperty()</code> 判断属性是不是当前对象自身的，过滤掉原型链上的属性。</p>
-<h3 id="8-6-调试坑：非严格模式下的静默失败">8.6 调试坑：非严格模式下的静默失败</h3>
-<p>在非严格模式下，很多违反属性描述符规则的操作，不会报错，只会静默失败。开发时一定要开启严格模式（在代码顶部加 <code>"use strict";</code>），所有违规操作都会直接抛出明确的报错。</p>
-<h3 id="8-7-数组坑：修改数组-length-属性的描述符">8.7 数组坑：修改数组 length 属性的描述符</h3>
-<p>数组的 <code>length</code> 属性本身就有默认的属性描述符：<code>writable: true</code>、<code>enumerable: false</code>、<code>configurable: false</code>。非特殊需求，绝对不要修改数组 <code>length</code> 属性的描述符！</p>
-<h3 id="8-8-继承坑：原型上的属性描述符会影响所有实例">8.8 继承坑：原型上的属性描述符会影响所有实例</h3>
-<p>如果你给构造函数的原型对象，用 <code>Object.defineProperty</code> 定义了属性，那么这个属性的描述符会影响所有的实例对象！</p>
-<h3 id="8-9-拓展提醒：Object-defineProperty-的局限性">8.9 拓展提醒：Object.defineProperty 的局限性</h3>
-<p><code>Object.defineProperty</code> 有一些局限性：</p>
+<h3 id="8-6-非严格模式下的静默失败"><a href="#8-6-非严格模式下的静默失败" class="headerlink" title="8.6 非严格模式下的静默失败"></a>8.6 非严格模式下的静默失败</h3><p>在非严格模式下，很多违反属性描述符规则的操作，不会报错，只会静默失败。开发时一定要开启严格模式（在代码顶部加 <code>"use strict";</code>），所有违规操作都会直接抛出明确的报错。</p>
+<h3 id="8-7-修改数组-length-属性的描述符"><a href="#8-7-修改数组-length-属性的描述符" class="headerlink" title="8.7 修改数组 length 属性的描述符"></a>8.7 修改数组 length 属性的描述符</h3><p>数组的 <code>length</code> 属性本身就有默认的属性描述符：<code>writable: true</code>、<code>enumerable: false</code>、<code>configurable: false</code>。非特殊需求，绝对不要修改数组 <code>length</code> 属性的描述符！</p>
+<h3 id="8-8-原型上的属性描述符会影响所有实例"><a href="#8-8-原型上的属性描述符会影响所有实例" class="headerlink" title="8.8 原型上的属性描述符会影响所有实例"></a>8.8 原型上的属性描述符会影响所有实例</h3><p>如果你给构造函数的原型对象，用 <code>Object.defineProperty</code> 定义了属性，那么这个属性的描述符会影响所有的实例对象！</p>
+<h3 id="8-9-Object-defineProperty-的局限性"><a href="#8-9-Object-defineProperty-的局限性" class="headerlink" title="8.9 Object.defineProperty 的局限性"></a>8.9 Object.defineProperty 的局限性</h3><p><code>Object.defineProperty</code> 有一些局限性：</p>
 <ul>
 <li>只能监听对象已有属性的读写，无法监听新增属性、删除属性</li>
 <li>对数组的监听能力有限，无法监听通过下标修改数组元素、修改数组 length 的操作</li>
 <li>只能监听单个属性，需要递归遍历对象的所有属性，性能开销较大</li>
 </ul>
 <p>如果需要完整监听对象的所有变化，ES6 提供了更强大的 <code>Proxy</code> 对象，它可以拦截整个对象的所有操作，解决了 <code>Object.defineProperty</code> 的所有局限性，也是 Vue3 响应式的核心原理。</p>
-<h2 id="九、总结">九、总结</h2>
-<p>属性描述符是 JS 用来控制对象属性隐藏特性的配置对象，分为数据属性描述符和访问器属性描述符两类，二者互斥不可混用。</p>
-<h3 id="数据属性的-4-个核心特性：">数据属性的 4 个核心特性：</h3>
-<ul>
+<h2 id="九、总结"><a href="#九、总结" class="headerlink" title="九、总结"></a>九、总结</h2><p>属性描述符是 JS 用来控制对象属性隐藏特性的配置对象，分为数据属性描述符和访问器属性描述符两类，二者互斥不可混用。</p>
+<h3 id="数据属性的-4-个核心特性："><a href="#数据属性的-4-个核心特性：" class="headerlink" title="数据属性的 4 个核心特性："></a>数据属性的 4 个核心特性：</h3><ul>
 <li><code>value</code>：属性存储的值</li>
 <li><code>writable</code>：控制属性是否可被直接赋值修改</li>
 <li><code>enumerable</code>：控制属性是否可被遍历</li>
 <li><code>configurable</code>：控制属性是否可被配置、删除，设为 false 后不可逆</li>
 </ul>
-<h3 id="访问器属性：">访问器属性：</h3>
-<p>通过 <code>get</code>（读取触发）和 <code>set</code>（赋值触发）函数控制属性读写，严禁在 get/set 内直接访问同名属性，避免无限递归。</p>
-<h3 id="核心操作方法：">核心操作方法：</h3>
-<ul>
+<h3 id="访问器属性："><a href="#访问器属性：" class="headerlink" title="访问器属性："></a>访问器属性：</h3><p>通过 <code>get</code>（读取触发）和 <code>set</code>（赋值触发）函数控制属性读写，严禁在 get/set 内直接访问同名属性，避免无限递归。</p>
+<h3 id="核心操作方法："><a href="#核心操作方法：" class="headerlink" title="核心操作方法："></a>核心操作方法：</h3><ul>
 <li>单个属性配置：<code>Object.defineProperty()</code></li>
 <li>批量属性配置：<code>Object.defineProperties()</code></li>
 <li>查看属性描述符：<code>Object.getOwnPropertyDescriptor()</code> / <code>Object.getOwnPropertyDescriptors()</code></li>
 </ul>
-<h3 id="核心避坑原则：">核心避坑原则：</h3>
-<ul>
+<h3 id="核心避坑原则："><a href="#核心避坑原则：" class="headerlink" title="核心避坑原则："></a>核心避坑原则：</h3><ul>
 <li>用 <code>Object.defineProperty</code> 时，手动明确写出所有特性，不依赖默认值</li>
 <li>开发时开启严格模式，避免静默失败导致的调试困难</li>
 <li>非必要不设置 <code>configurable: false</code>，避免不可逆的操作</li>
 <li>访问器属性必须用不同名的内部属性存储真实值，杜绝无限递归</li>
 </ul>
-<p>希望这篇文章能帮你理解属性描述符！如果有什么疑问，欢迎在评论区留言～</p>
 
                 
             </div>
@@ -653,9 +629,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="前端属性描述符详解">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="属性描述符详解">
                         
-                        <span class="card-title">前端属性描述符详解</span>
+                        <span class="card-title">属性描述符详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -901,7 +877,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.2k</span>
+                        class="white-color">35.1k</span>
             
             
             

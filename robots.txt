@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+
+# 提交站点地图
+Sitemap: https://dfamemaster.github.io/sitemap.xml
+Sitemap: https://dfamemaster.github.io/baidusitemap.xml

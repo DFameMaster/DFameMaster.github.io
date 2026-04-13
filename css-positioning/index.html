@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS元素的定位, 梧桐的博客">
-    <meta name="description" content="CSS元素的定位
-CSS元素的定位是前端开发中非常重要的概念，它允许我们精确控制元素在页面中的位置。本文将详细介绍CSS中的四种定位方式：相对定位、绝对定位、固定定位和粘性定位。
-0. 前置基础：静态定位 (position: static">
+    <meta name="keywords" content="CSS元素的定位, 前端开发, JavaScript, HTML, CSS, 编程, 技术分享, 学习笔记">
+    <meta name="description" content="CSS元素的定位CSS元素的定位是前端开发中非常重要的概念，它允许我们精确控制元素在页面中的位置。本文将详细介绍CSS中的四种定位方式：相对定位、绝对定位、固定定位和粘性定位。
+0. 前置基础：静态定位 (position: static)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -52,9 +51,9 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="梧桐的博客" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="梧桐的博客" type="application/atom+xml">
 </head>
 
 
@@ -152,7 +151,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
         <div class="logo-name">梧桐的博客</div>
         <div class="logo-desc">
             
-            Never really desperate, only the lost of the soul.
+            专注于前端开发、技术分享和编程经验的个人博客，记录学习过程和实践心得，分享优质技术内容。
             
         </div>
     </div>
@@ -364,7 +363,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.6k
+                    4.5k
                 </div>
                 
 
@@ -391,10 +390,8 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>CSS元素的定位</h1>
-<p>CSS元素的定位是前端开发中非常重要的概念，它允许我们精确控制元素在页面中的位置。本文将详细介绍CSS中的四种定位方式：相对定位、绝对定位、固定定位和粘性定位。</p>
-<h2 id="0-前置基础：静态定位-position-static">0. 前置基础：静态定位 (position: static)</h2>
-<p><strong>默认定位方式</strong>：HTML元素默认的 <code>position</code> 值是 <code>static</code>（静态定位），遵循正常文档流布局。</p>
+                <h1 id="CSS元素的定位"><a href="#CSS元素的定位" class="headerlink" title="CSS元素的定位"></a>CSS元素的定位</h1><p>CSS元素的定位是前端开发中非常重要的概念，它允许我们精确控制元素在页面中的位置。本文将详细介绍CSS中的四种定位方式：相对定位、绝对定位、固定定位和粘性定位。</p>
+<h2 id="0-前置基础：静态定位-position-static"><a href="#0-前置基础：静态定位-position-static" class="headerlink" title="0. 前置基础：静态定位 (position: static)"></a>0. 前置基础：静态定位 (position: static)</h2><p><strong>默认定位方式</strong>：HTML元素默认的 <code>position</code> 值是 <code>static</code>（静态定位），遵循正常文档流布局。</p>
 <p><strong>特点</strong>：</p>
 <ul>
 <li>元素按照HTML结构的顺序排列</li>
@@ -402,48 +399,40 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <li><code>z-index</code> 属性不生效</li>
 <li>不会创建堆叠上下文</li>
 </ul>
-<p><strong>开启定位</strong>：我们常说的"开启定位"，就是把 <code>position</code> 设置为 <code>static</code> 之外的值（如 <code>relative</code>、<code>absolute</code>、<code>fixed</code>、<code>sticky</code>）。</p>
-<h3 id="交互式示例">交互式示例</h3>
-<p>通过以下示例可以直观看到静态定位元素的排列方式：</p>
+<p><strong>开启定位</strong>：我们常说的”开启定位”，就是把 <code>position</code> 设置为 <code>static</code> 之外的值（如 <code>relative</code>、<code>absolute</code>、<code>fixed</code>、<code>sticky</code>）。</p>
+<h3 id="交互式示例"><a href="#交互式示例" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到静态定位元素的排列方式：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPumdmeaAgeWumuS9jeekuuS+izwvdGl0bGU+CjxzdHlsZT4KICAuY29udGFpbmVyIHsKICAgIHdpZHRoOiAzMDBweDsKICAgIGJvcmRlcjogMnB4IHNvbGlkICMzMzM7CiAgICBwYWRkaW5nOiAyMHB4OwogIH0KICAuYm94IHsKICAgIHdpZHRoOiA4MHB4OwogICAgaGVpZ2h0OiA4MHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmNmI2YjsKICAgIGNvbG9yOiB3aGl0ZTsKICAgIGRpc3BsYXk6IGZsZXg7CiAgICBhbGlnbi1pdGVtczogY2VudGVyOwogICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7CiAgICBmb250LXdlaWdodDogYm9sZDsKICAgIG1hcmdpbjogMTBweDsKICB9CiAgLmlubGluZS1ib3ggewogICAgZGlzcGxheTogaW5saW5lLWJsb2NrOwogIH0KPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8ZGl2IGNsYXNzPSJjb250YWluZXIiPgogICAgPGgzPuWdl+e6p+WFg+e0oO+8iOWeguebtOaOkuWIl++8iTwvaDM+CiAgICA8ZGl2IGNsYXNzPSJib3giPuWdlzE8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJveCI+5Z2XMjwvZGl2PgogICAgPGRpdiBjbGFzcz0iYm94Ij7lnZczPC9kaXY+CiAgICAKICAgIDxoMz7ooYzlhoXlnZflhYPntKDvvIjmsLTlubPmjpLliJfvvIk8L2gzPgogICAgPGRpdiBjbGFzcz0iYm94IGlubGluZS1ib3giPuihjOWGhTE8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJveCBpbmxpbmUtYm94Ij7ooYzlhoUyPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJib3ggaW5saW5lLWJveCI+6KGM5YaFMzwvZGl2PgogIDwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4=', '*')"></iframe></div>
-<h2 id="1-相对定位-position-relative">1. 相对定位 (position: relative)</h2>
-<p>相对定位是一种基于元素自身原始位置的定位方式。</p>
-<h3 id="基本特性">基本特性</h3>
-<ol>
+
+<h2 id="1-相对定位-position-relative"><a href="#1-相对定位-position-relative" class="headerlink" title="1. 相对定位 (position: relative)"></a>1. 相对定位 (position: relative)</h2><p>相对定位是一种基于元素自身原始位置的定位方式。</p>
+<h3 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h3><ol>
 <li><strong>开启方式</strong>：给元素设置 <code>position: relative</code> 即可实现相对定位</li>
 <li><strong>位置调整</strong>：可以使用 <code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code> 四个属性调整位置</li>
 <li><strong>参考点</strong>：相对定位的参考点是元素自身原来的位置</li>
 <li><strong>文档流</strong>：相对定位不会脱离文档流，元素位置的变化只是视觉效果上的变化，不会对其他元素产生任何影响</li>
 <li><strong>显示层级</strong>：相对定位元素的显示层级比普通元素高</li>
 <li><strong>位置属性</strong>：相对定位元素水平方向同时设置 <code>left</code> 和 <code>right</code> 时，<code>left</code> 优先级更高，<code>right</code> 会被忽略；垂直方向 <code>top</code> 优先级高于 <code>bottom</code>。通常只设置其中一个方向的属性</li>
-<li><strong>与其他属性的关系</strong>：
-<ul>
+<li><strong>与其他属性的关系</strong>：<ul>
 <li>相对定位的元素也能继续浮动，但不推荐这样做</li>
 <li>相对定位的元素也能通过 <code>margin</code> 调整位置，但不推荐这样做</li>
 </ul>
 </li>
 </ol>
-<h3 id="代码示例">代码示例</h3>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> {</span><br><span class="line">  <span class="attribute">position</span>: relative; <span class="comment">/* 开启相对定位 */</span></span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>; <span class="comment">/* 向右移动10px */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>; <span class="comment">/* 向下移动10px */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="交互式示例-2">交互式示例</h3>
-<p>通过以下示例可以直观看到相对定位元素如何相对于自身原始位置偏移：</p>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> {</span><br><span class="line">  <span class="attribute">position</span>: relative; <span class="comment">/* 开启相对定位 */</span></span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>; <span class="comment">/* 向右移动10px */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>; <span class="comment">/* 向下移动10px */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="交互式示例-1"><a href="#交互式示例-1" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到相对定位元素如何相对于自身原始位置偏移：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuebuOWvueWumuS9jeekuuS+izwvdGl0bGU+CjxzdHlsZT4KICAuY29udGFpbmVyIHsKICAgIHdpZHRoOiAzMDBweDsKICAgIGhlaWdodDogMjAwcHg7CiAgICBib3JkZXI6IDJweCBzb2xpZCAjMzMzOwogICAgcGFkZGluZzogMjBweDsKICB9CiAgLmJveCB7CiAgICB3aWR0aDogMTAwcHg7CiAgICBoZWlnaHQ6IDEwMHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmNmI2YjsKICAgIGRpc3BsYXk6IGZsZXg7CiAgICBhbGlnbi1pdGVtczogY2VudGVyOwogICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7CiAgICBjb2xvcjogd2hpdGU7CiAgICBmb250LXdlaWdodDogYm9sZDsKICB9CiAgLnJlbGF0aXZlLWJveCB7CiAgICBwb3NpdGlvbjogcmVsYXRpdmU7CiAgICBsZWZ0OiA1MHB4OwogICAgdG9wOiAyMHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogIzRlY2RjNDsKICB9Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CiAgPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KICAgIDxkaXYgY2xhc3M9ImJveCI+6Z2Z5oCB5a6a5L2NPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJib3ggcmVsYXRpdmUtYm94Ij7nm7jlr7nlrprkvY08L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJveCI+6Z2Z5oCB5a6a5L2NPC9kaXY+CiAgPC9kaXY+CjwvYm9keT4KPC9odG1sPg==', '*')"></iframe></div>
-<h3 id="应用场景">应用场景</h3>
-<ul>
+
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>微调元素位置</li>
 <li>作为绝对定位元素的父容器</li>
 <li>实现简单的动画效果</li>
 </ul>
-<h2 id="2-绝对定位-position-absolute">2. 绝对定位 (position: absolute)</h2>
-<p>绝对定位是一种基于包含块的定位方式，元素会脱离文档流。</p>
-<h3 id="基本特性-2">基本特性</h3>
-<ol>
+<h2 id="2-绝对定位-position-absolute"><a href="#2-绝对定位-position-absolute" class="headerlink" title="2. 绝对定位 (position: absolute)"></a>2. 绝对定位 (position: absolute)</h2><p>绝对定位是一种基于包含块的定位方式，元素会脱离文档流。</p>
+<h3 id="基本特性-1"><a href="#基本特性-1" class="headerlink" title="基本特性"></a>基本特性</h3><ol>
 <li><strong>开启方式</strong>：给元素设置 <code>position: absolute</code> 即可实现绝对定位</li>
 <li><strong>位置调整</strong>：可以使用 <code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code> 四个属性调整位置</li>
-<li><strong>包含块</strong>：绝对定位的参考点是它的包含块
-<ul>
-<li>什么是包含块?
-<ul>
+<li><strong>包含块</strong>：绝对定位的参考点是它的包含块<ul>
+<li>什么是包含块?<ul>
 <li>绝对定位元素的包含块，是最近的position值不为static的祖先元素（relative/absolute/fixed/sticky均符合）</li>
 <li><strong>重要提示</strong>：如果祖先元素设置了transform、perspective、filter、backdrop-filter、will-change: transform、contain: layout/paint等属性，即使position为static，也会成为该绝对定位元素的包含块</li>
 <li>如果没有符合条件的祖先元素，包含块就是整个页面</li>
@@ -453,116 +442,99 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 </li>
 <li><strong>文档流</strong>：绝对定位会脱离文档流，会对后面的兄弟元素、父元素有影响</li>
 <li><strong>位置属性</strong>：绝对定位元素可以同时设置 <code>left</code> 和 <code>right</code>（会拉伸元素宽度），也可以同时设置 <code>top</code> 和 <code>bottom</code>（会拉伸元素高度）。这是实现绝对定位元素居中的常用技巧</li>
-<li><strong>与其他属性的关系</strong>：
-<ul>
+<li><strong>与其他属性的关系</strong>：<ul>
 <li>绝对定位和浮动不能同时设置，如果同时设置，浮动失效，以定位为主</li>
 <li>绝对定位的元素也能通过 <code>margin</code> 调整位置，但不推荐这样做</li>
 </ul>
 </li>
-<li><strong>元素类型</strong>：无论是什么元素（行内、行内块、块级）设置为绝对定位之后，都变成了<strong>定位元素</strong>
-<ul>
+<li><strong>元素类型</strong>：无论是什么元素（行内、行内块、块级）设置为绝对定位之后，都变成了<strong>定位元素</strong><ul>
 <li>定位元素：默认宽、高都被内容所撑开，且能自由设置宽高</li>
 </ul>
 </li>
 </ol>
-<h3 id="代码示例-2">代码示例</h3>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> {</span><br><span class="line">  <span class="attribute">position</span>: relative; <span class="comment">/* 作为绝对定位元素的包含块 */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f0f0f0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute; <span class="comment">/* 开启绝对定位 */</span></span><br><span class="line">  <span class="attribute">left</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ff6b6b</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="交互式示例-3">交互式示例</h3>
-<p>通过以下示例可以直观看到绝对定位元素如何相对于包含块定位并脱离文档流：</p>
+<h3 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> {</span><br><span class="line">  <span class="attribute">position</span>: relative; <span class="comment">/* 作为绝对定位元素的包含块 */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f0f0f0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.child</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute; <span class="comment">/* 开启绝对定位 */</span></span><br><span class="line">  <span class="attribute">left</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ff6b6b</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="交互式示例-2"><a href="#交互式示例-2" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到绝对定位元素如何相对于包含块定位并脱离文档流：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPue7neWvueWumuS9jeekuuS+izwvdGl0bGU+CjxzdHlsZT4KICAucGFyZW50IHsKICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgIHdpZHRoOiAzMDBweDsKICAgIGhlaWdodDogMjAwcHg7CiAgICBib3JkZXI6IDJweCBzb2xpZCAjMzMzOwogICAgYmFja2dyb3VuZC1jb2xvcjogI2YwZjBmMDsKICAgIHBhZGRpbmc6IDIwcHg7CiAgfQogIC5ib3ggewogICAgd2lkdGg6IDgwcHg7CiAgICBoZWlnaHQ6IDgwcHg7CiAgICBkaXNwbGF5OiBmbGV4OwogICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOwogICAgY29sb3I6IHdoaXRlOwogICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgfQogIC5zdGF0aWMtYm94IHsKICAgIGJhY2tncm91bmQtY29sb3I6ICNmZjZiNmI7CiAgfQogIC5hYnNvbHV0ZS1ib3ggewogICAgcG9zaXRpb246IGFic29sdXRlOwogICAgbGVmdDogMTAwcHg7CiAgICB0b3A6IDUwcHg7CiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNGVjZGM0OwogIH0KICAubm9ybWFsLWJveCB7CiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZiZTBiOwogICAgbWFyZ2luLXRvcDogMjBweDsKICB9Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CiAgPGRpdiBjbGFzcz0icGFyZW50Ij4KICAgIDxkaXYgY2xhc3M9ImJveCBzdGF0aWMtYm94Ij7pnZnmgIHlrprkvY08L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJveCBhYnNvbHV0ZS1ib3giPue7neWvueWumuS9jTwvZGl2PgogICAgPGRpdiBjbGFzcz0iYm94IG5vcm1hbC1ib3giPuato+W4uOWFg+e0oDwvZGl2PgogIDwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4=', '*')"></iframe></div>
-<h3 id="应用场景-2">应用场景</h3>
-<ul>
+
+<h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>实现元素的精确定位</li>
 <li>创建弹出菜单、下拉列表</li>
 <li>实现模态框、对话框</li>
 <li>制作复杂的布局结构</li>
 </ul>
-<h2 id="3-固定定位-position-fixed">3. 固定定位 (position: fixed)</h2>
-<p>固定定位是一种基于视口的定位方式，元素会固定在屏幕的某个位置，不会随页面滚动而移动。</p>
-<h3 id="基本特性-3">基本特性</h3>
-<ol>
+<h2 id="3-固定定位-position-fixed"><a href="#3-固定定位-position-fixed" class="headerlink" title="3. 固定定位 (position: fixed)"></a>3. 固定定位 (position: fixed)</h2><p>固定定位是一种基于视口的定位方式，元素会固定在屏幕的某个位置，不会随页面滚动而移动。</p>
+<h3 id="基本特性-2"><a href="#基本特性-2" class="headerlink" title="基本特性"></a>基本特性</h3><ol>
 <li><strong>开启方式</strong>：给元素设置 <code>position: fixed</code> 即可实现固定定位</li>
 <li><strong>位置调整</strong>：可以使用 <code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code> 四个属性调整位置</li>
-<li><strong>参考点</strong>：固定定位的默认包含块是视口（viewport）
-<ul>
+<li><strong>参考点</strong>：固定定位的默认包含块是视口（viewport）<ul>
 <li>什么是视口？对于 PC 浏览器来说，视口就是我们看网页的那扇“窗户”</li>
 <li><strong>重要提示</strong>：如果祖先元素设置了transform、perspective、filter、backdrop-filter、will-change: transform、contain: layout/paint等属性，固定定位的包含块就会变为该祖先元素，不再相对于视口定位</li>
 </ul>
 </li>
 <li><strong>文档流</strong>：固定定位脱离文档流，会对后面的兄弟元素、父元素有影响</li>
 <li><strong>位置属性</strong>：固定定位元素可以同时设置 <code>left</code> 和 <code>right</code>（会拉伸元素宽度），也可以同时设置 <code>top</code> 和 <code>bottom</code>（会拉伸元素高度）</li>
-<li><strong>与其他属性的关系</strong>：
-<ul>
+<li><strong>与其他属性的关系</strong>：<ul>
 <li>固定定位和浮动不能同时设置，如果同时设置，浮动失效，以固定定位为主</li>
 <li>固定定位的元素也能通过 <code>margin</code> 调整位置，但不推荐这样做</li>
 </ul>
 </li>
 <li><strong>元素类型</strong>：无论是什么元素（行内、行内块、块级）设置为固定定位之后，都变成了定位元素</li>
 </ol>
-<h3 id="代码示例-3">代码示例</h3>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fixed-header</span> {</span><br><span class="line">  <span class="attribute">position</span>: fixed; <span class="comment">/* 开启固定定位 */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1000</span>; <span class="comment">/* 确保头部在最上层 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> {</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">60px</span>; <span class="comment">/* 为固定头部留出空间 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="交互式示例-4">交互式示例</h3>
-<p>通过以下示例可以直观看到固定定位元素如何固定在视口的某个位置，不随页面滚动而移动：</p>
+<h3 id="代码示例-2"><a href="#代码示例-2" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fixed-header</span> {</span><br><span class="line">  <span class="attribute">position</span>: fixed; <span class="comment">/* 开启固定定位 */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1000</span>; <span class="comment">/* 确保头部在最上层 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> {</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">60px</span>; <span class="comment">/* 为固定头部留出空间 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="交互式示例-3"><a href="#交互式示例-3" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到固定定位元素如何固定在视口的某个位置，不随页面滚动而移动：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWbuuWumuWumuS9jeekuuS+izwvdGl0bGU+CjxzdHlsZT4KICAuZml4ZWQtaGVhZGVyIHsKICAgIHBvc2l0aW9uOiBmaXhlZDsKICAgIHRvcDogMDsKICAgIGxlZnQ6IDA7CiAgICB3aWR0aDogMTAwJTsKICAgIGhlaWdodDogNTBweDsKICAgIGJhY2tncm91bmQtY29sb3I6ICMzMzM7CiAgICBjb2xvcjogd2hpdGU7CiAgICBkaXNwbGF5OiBmbGV4OwogICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOwogICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgICB6LWluZGV4OiAxMDAwOwogIH0KICAuY29udGVudCB7CiAgICBtYXJnaW4tdG9wOiA2MHB4OwogICAgcGFkZGluZzogMjBweDsKICAgIGhlaWdodDogNDAwcHg7CiAgICBvdmVyZmxvdy15OiBzY3JvbGw7CiAgICBib3JkZXI6IDJweCBzb2xpZCAjMzMzOwogICAgd2lkdGg6IDMwMHB4OwogIH0KICAuc2VjdGlvbiB7CiAgICBtYXJnaW4tYm90dG9tOiA0MHB4OwogICAgcGFkZGluZzogMTVweDsKICAgIGJhY2tncm91bmQtY29sb3I6ICNmMGYwZjA7CiAgICBib3JkZXItcmFkaXVzOiA1cHg7CiAgfQogIC5iYWNrLXRvLXRvcCB7CiAgICBwb3NpdGlvbjogZml4ZWQ7CiAgICBib3R0b206IDIwcHg7CiAgICByaWdodDogMjBweDsKICAgIHdpZHRoOiA0MHB4OwogICAgaGVpZ2h0OiA0MHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmNmI2YjsKICAgIGNvbG9yOiB3aGl0ZTsKICAgIGRpc3BsYXk6IGZsZXg7CiAgICBhbGlnbi1pdGVtczogY2VudGVyOwogICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7CiAgICBib3JkZXItcmFkaXVzOiA1MCU7CiAgICBmb250LXdlaWdodDogYm9sZDsKICAgIGN1cnNvcjogcG9pbnRlcjsKICB9Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CiAgPGRpdiBjbGFzcz0iZml4ZWQtaGVhZGVyIj7lm7rlrprlr7zoiKrmoI88L2Rpdj4KICA8ZGl2IGNsYXNzPSJjb250ZW50Ij4KICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICA8aDM+56ys5LiA6YOo5YiGPC9oMz4KICAgICAgPHA+5rua5Yqo6aG16Z2i5p+l55yL5Zu65a6a5a6a5L2N5pWI5p6cLi4uPC9wPgogICAgPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uIj4KICAgICAgPGgzPuesrOS6jOmDqOWIhjwvaDM+CiAgICAgIDxwPuWbuuWumuWvvOiIquagj+S8muWni+e7iOS/neaMgeWcqOinhuWPo+mhtumDqDwvcD4KICAgIDwvZGl2PgogICAgPGRpdiBjbGFzcz0ic2VjdGlvbiI+CiAgICAgIDxoMz7nrKzkuInpg6jliIY8L2gzPgogICAgICA8cD7lm57liLDpobbpg6jmjInpkq7kuZ/kvJrlm7rlrprlnKjop4blj6Plj7PkuIvop5I8L3A+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICA8aDM+56ys5Zub6YOo5YiGPC9oMz4KICAgICAgPHA+57un57ut5rua5YqoLi4uPC9wPgogICAgPC9kaXY+CiAgPC9kaXY+CiAgPGRpdiBjbGFzcz0iYmFjay10by10b3AiPuKGkTwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4=', '*')"></iframe></div>
-<h3 id="应用场景-3">应用场景</h3>
-<ul>
+
+<h3 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>固定导航栏</li>
 <li>固定侧边栏</li>
 <li>回到顶部按钮</li>
 <li>悬浮广告</li>
 </ul>
-<h2 id="4-粘性定位-position-sticky">4. 粘性定位 (position: sticky)</h2>
-<p>粘性定位是一种结合了相对定位和固定定位特点的定位方式，元素在滚动到一定位置时会固定。</p>
-<h3 id="基本特性-4">基本特性</h3>
-<ol>
+<h2 id="4-粘性定位-position-sticky"><a href="#4-粘性定位-position-sticky" class="headerlink" title="4. 粘性定位 (position: sticky)"></a>4. 粘性定位 (position: sticky)</h2><p>粘性定位是一种结合了相对定位和固定定位特点的定位方式，元素在滚动到一定位置时会固定。</p>
+<h3 id="基本特性-3"><a href="#基本特性-3" class="headerlink" title="基本特性"></a>基本特性</h3><ol>
 <li><strong>开启方式</strong>：给元素设置 <code>position: sticky</code> 即可实现粘性定位</li>
 <li><strong>位置调整</strong>：必须设置 <code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code> 中的至少一个值，否则只会表现为相对定位</li>
 <li><strong>参考点</strong>：粘性定位的粘性约束矩形，由最近的overflow值不为visible的可滚动祖先元素和自身的包含块共同决定</li>
 <li><strong>文档流</strong>：粘性定位元素不会脱离文档流，它是一种专门用于窗口滚动时的新的定位方式</li>
-<li><strong>与其他属性的关系</strong>：
-<ul>
+<li><strong>与其他属性的关系</strong>：<ul>
 <li>粘性定位和浮动可以同时设置，但不推荐这样做</li>
 <li>粘性定位的元素也能通过 <code>margin</code> 调整位置，但不推荐这样做</li>
 </ul>
 </li>
 <li><strong>特点</strong>：粘性定位和相对定位的特点基本一致，不同的是：粘性定位可以在元素到达某个位置时将其固定</li>
 </ol>
-<h3 id="核心生效条件">核心生效条件</h3>
-<ol>
+<h3 id="核心生效条件"><a href="#核心生效条件" class="headerlink" title="核心生效条件"></a>核心生效条件</h3><ol>
 <li><strong>必须设置偏移阈值</strong>：必须设置 <code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code> 中的至少一个值，否则不会有粘性效果</li>
 <li><strong>父元素高度限制</strong>：直接父元素的高度必须大于sticky元素的高度，否则没有滚动空间，无法触发粘性效果</li>
 <li><strong>overflow限制</strong>：直接父元素不能设置 <code>overflow: hidden</code>（除非该父元素就是滚动容器），否则会直接失效</li>
 <li><strong>flex容器限制</strong>：若父元素是 flex 容器，sticky元素不能设置 <code>flex-grow: 1</code>，否则会失效</li>
 </ol>
-<h3 id="代码示例-4">代码示例</h3>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sticky-nav</span> {</span><br><span class="line">  <span class="attribute">position</span>: sticky; <span class="comment">/* 开启粘性定位 */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f8f9fa</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="交互式示例-5">交互式示例</h3>
-<p>通过以下示例可以直观看到粘性定位元素如何在滚动到一定位置时固定：</p>
+<h3 id="代码示例-3"><a href="#代码示例-3" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sticky-nav</span> {</span><br><span class="line">  <span class="attribute">position</span>: sticky; <span class="comment">/* 开启粘性定位 */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f8f9fa</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.1</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="交互式示例-4"><a href="#交互式示例-4" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到粘性定位元素如何在滚动到一定位置时固定：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPueymOaAp+WumuS9jeekuuS+izwvdGl0bGU+CjxzdHlsZT4KICAuY29udGFpbmVyIHsKICAgIHdpZHRoOiAzMDBweDsKICAgIGhlaWdodDogNDAwcHg7CiAgICBvdmVyZmxvdy15OiBzY3JvbGw7CiAgICBib3JkZXI6IDJweCBzb2xpZCAjMzMzOwogICAgcGFkZGluZzogMjBweDsKICB9CiAgLmhlYWRlciB7CiAgICBoZWlnaHQ6IDgwcHg7CiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmY2YjZiOwogICAgY29sb3I6IHdoaXRlOwogICAgZGlzcGxheTogZmxleDsKICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsKICAgIGZvbnQtd2VpZ2h0OiBib2xkOwogICAgbWFyZ2luLWJvdHRvbTogMjBweDsKICB9CiAgLnN0aWNreS1uYXYgewogICAgcG9zaXRpb246IHN0aWNreTsKICAgIHRvcDogMDsKICAgIGJhY2tncm91bmQtY29sb3I6ICM0ZWNkYzQ7CiAgICBjb2xvcjogd2hpdGU7CiAgICBwYWRkaW5nOiAxMHB4OwogICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgICBtYXJnaW4tYm90dG9tOiAyMHB4OwogICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTsKICB9CiAgLmNvbnRlbnQgewogICAgYmFja2dyb3VuZC1jb2xvcjogI2YwZjBmMDsKICAgIHBhZGRpbmc6IDIwcHg7CiAgICBtYXJnaW4tYm90dG9tOiAyMHB4OwogIH0KICAuc2VjdGlvbiB7CiAgICBtYXJnaW4tYm90dG9tOiA0MHB4OwogICAgcGFkZGluZzogMTVweDsKICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlOwogICAgYm9yZGVyLXJhZGl1czogNXB4OwogIH0KPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8ZGl2IGNsYXNzPSJjb250YWluZXIiPgogICAgPGRpdiBjbGFzcz0iaGVhZGVyIj7pobXpnaLlpLTpg6g8L2Rpdj4KICAgIDxkaXYgY2xhc3M9InN0aWNreS1uYXYiPueymOaAp+WvvOiIquagjzwvZGl2PgogICAgPGRpdiBjbGFzcz0iY29udGVudCI+CiAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICAgIDxoMz7nrKzkuIDpg6jliIY8L2gzPgogICAgICAgIDxwPua7muWKqOmhtemdouafpeeci+eymOaAp+WumuS9jeaViOaenC4uLjwvcD4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICAgIDxoMz7nrKzkuozpg6jliIY8L2gzPgogICAgICAgIDxwPueymOaAp+WvvOiIquagj+S8muWcqOa7muWKqOWIsOmhtumDqOaXtuWbuuWumjwvcD4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICAgIDxoMz7nrKzkuInpg6jliIY8L2gzPgogICAgICAgIDxwPue7p+e7rea7muWKqC4uLjwvcD4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICAgIDxoMz7nrKzlm5vpg6jliIY8L2gzPgogICAgICAgIDxwPueymOaAp+WvvOiIquagj+S8muS/neaMgeWbuuWumuebtOWIsOa7muWKqOWHuuWuueWZqDwvcD4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICA8L2Rpdj4KPC9ib2R5Pgo8L2h0bWw+', '*')"></iframe></div>
-<h3 id="应用场景-4">应用场景</h3>
-<ul>
+
+<h3 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>滚动时固定的导航栏</li>
 <li>滚动时固定的表格表头</li>
 <li>滚动时固定的侧边栏目录</li>
 </ul>
-<h2 id="5-定位的层级-z-index">5. 定位的层级 (z-index)</h2>
-<p>当元素发生重叠时，我们需要控制它们的显示层级。</p>
-<h3 id="基本规则">基本规则</h3>
-<ol>
+<h2 id="5-定位的层级-z-index"><a href="#5-定位的层级-z-index" class="headerlink" title="5. 定位的层级 (z-index)"></a>5. 定位的层级 (z-index)</h2><p>当元素发生重叠时，我们需要控制它们的显示层级。</p>
+<h3 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h3><ol>
 <li><strong>默认层级</strong>：定位元素的显示层级比普通元素高，无论什么定位，显示层级都是一样的</li>
 <li><strong>堆叠顺序</strong>：如果位置发生重叠，默认情况是：后面的元素会显示在前面元素之上</li>
 <li><strong>z-index 属性</strong>：可以通过 CSS 属性 <code>z-index</code> 调整元素的显示层级</li>
 <li><strong>属性值</strong>：<code>z-index</code> 的属性值是数字，没有单位，值越大显示层级越高</li>
-<li><strong>生效条件</strong>：
-<ul>
+<li><strong>生效条件</strong>：<ul>
 <li>定位元素（position不为static）设置 <code>z-index</code> 有效</li>
 <li>Flex 容器的子项、Grid 容器的子项，即使position为static，设置 <code>z-index</code> 也有效</li>
 </ul>
 </li>
 <li><strong>包含块影响</strong>：如果 <code>z-index</code> 值大的元素，依然没有覆盖掉 <code>z-index</code> 值小的元素，那么请检查其包含块的层级</li>
 </ol>
-<h3 id="堆叠上下文（Stacking-Context）">堆叠上下文（Stacking Context）</h3>
-<p><strong>重要概念</strong>：堆叠上下文是元素在 z 轴上的渲染顺序环境，理解堆叠上下文是掌握 z-index 的关键</p>
+<h3 id="堆叠上下文（Stacking-Context）"><a href="#堆叠上下文（Stacking-Context）" class="headerlink" title="堆叠上下文（Stacking Context）"></a>堆叠上下文（Stacking Context）</h3><p><strong>重要概念</strong>：堆叠上下文是元素在 z 轴上的渲染顺序环境，理解堆叠上下文是掌握 z-index 的关键</p>
 <p><strong>触发堆叠上下文的常见场景</strong>：</p>
 <ul>
 <li>根元素（html）</li>
@@ -580,13 +552,12 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <li>z-index的比较只在同一个堆叠上下文中有效</li>
 <li>父元素创建了堆叠上下文，即使子元素z-index为999，也无法覆盖父元素外部、堆叠层级更高的元素</li>
 </ul>
-<h3 id="代码示例-5">代码示例</h3>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.layer1</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ff6b6b</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1</span>; <span class="comment">/* 层级较低 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.layer2</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#4ecdc4</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">2</span>; <span class="comment">/* 层级较高，会覆盖layer1 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="交互式示例-6">交互式示例</h3>
-<p>通过以下示例可以直观看到不同z-index值如何影响元素的堆叠顺序：</p>
+<h3 id="代码示例-4"><a href="#代码示例-4" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.layer1</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ff6b6b</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1</span>; <span class="comment">/* 层级较低 */</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.layer2</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#4ecdc4</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">2</span>; <span class="comment">/* 层级较高，会覆盖layer1 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="交互式示例-5"><a href="#交互式示例-5" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到不同z-index值如何影响元素的堆叠顺序：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPnotaW5kZXjnpLrkvos8L3RpdGxlPgo8c3R5bGU+CiAgLmNvbnRhaW5lciB7CiAgICBwb3NpdGlvbjogcmVsYXRpdmU7CiAgICB3aWR0aDogMzAwcHg7CiAgICBoZWlnaHQ6IDI1MHB4OwogICAgYm9yZGVyOiAycHggc29saWQgIzMzMzsKICAgIHBhZGRpbmc6IDIwcHg7CiAgfQogIC5ib3ggewogICAgcG9zaXRpb246IGFic29sdXRlOwogICAgd2lkdGg6IDEwMHB4OwogICAgaGVpZ2h0OiAxMDBweDsKICAgIGRpc3BsYXk6IGZsZXg7CiAgICBhbGlnbi1pdGVtczogY2VudGVyOwogICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7CiAgICBjb2xvcjogd2hpdGU7CiAgICBmb250LXdlaWdodDogYm9sZDsKICAgIGZvbnQtc2l6ZTogMTRweDsKICB9CiAgLmJveDEgewogICAgdG9wOiAyMHB4OwogICAgbGVmdDogMjBweDsKICAgIGJhY2tncm91bmQtY29sb3I6ICNmZjZiNmI7CiAgICB6LWluZGV4OiAxOwogIH0KICAuYm94MiB7CiAgICB0b3A6IDUwcHg7CiAgICBsZWZ0OiA1MHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogIzRlY2RjNDsKICAgIHotaW5kZXg6IDI7CiAgfQogIC5ib3gzIHsKICAgIHRvcDogODBweDsKICAgIGxlZnQ6IDgwcHg7CiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZiZTBiOwogICAgei1pbmRleDogMzsKICB9CiAgLmJveDQgewogICAgdG9wOiAxMTBweDsKICAgIGxlZnQ6IDExMHB4OwogICAgYmFja2dyb3VuZC1jb2xvcjogIzgzMzhlYzsKICAgIHotaW5kZXg6IDQ7CiAgfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgogIDxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICA8ZGl2IGNsYXNzPSJib3ggYm94MSI+ei1pbmRleDogMTwvZGl2PgogICAgPGRpdiBjbGFzcz0iYm94IGJveDIiPnotaW5kZXg6IDI8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImJveCBib3gzIj56LWluZGV4OiAzPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJib3ggYm94NCI+ei1pbmRleDogNDwvZGl2PgogIDwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4=', '*')"></iframe></div>
-<h2 id="6-定位方式对比">6. 定位方式对比</h2>
-<table>
+
+<h2 id="6-定位方式对比"><a href="#6-定位方式对比" class="headerlink" title="6. 定位方式对比"></a>6. 定位方式对比</h2><table>
 <thead>
 <tr>
 <th>定位方式</th>
@@ -595,8 +566,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <th>应用场景</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>相对定位</td>
 <td>不脱离</td>
 <td>元素自身原始位置</td>
@@ -620,34 +590,29 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <td>最近的滚动祖先元素</td>
 <td>滚动时固定的导航栏、表格表头</td>
 </tr>
-</tbody>
-</table>
-<h2 id="7-实际应用技巧">7. 实际应用技巧</h2>
-<h3 id="7-1-居中定位">7.1 居中定位</h3>
-<h4 id="水平垂直居中（绝对定位-transform）">水平垂直居中（绝对定位 + transform）</h4>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.centered</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</tbody></table>
+<h2 id="7-实际应用技巧"><a href="#7-实际应用技巧" class="headerlink" title="7. 实际应用技巧"></a>7. 实际应用技巧</h2><h3 id="7-1-居中定位"><a href="#7-1-居中定位" class="headerlink" title="7.1 居中定位"></a>7.1 居中定位</h3><h4 id="水平垂直居中（绝对定位-transform）"><a href="#水平垂直居中（绝对定位-transform）" class="headerlink" title="水平垂直居中（绝对定位 + transform）"></a>水平垂直居中（绝对定位 + transform）</h4><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.centered</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 <p><strong>注意</strong>：这种方法可能导致字体模糊，如果对清晰度要求高，可考虑使用grid/flex居中</p>
-<h4 id="水平居中（绝对定位-margin-auto）">水平居中（绝对定位 + margin: auto）</h4>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.horizontal-center</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>; <span class="comment">/* 必须指定宽度 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="交互式示例-7">交互式示例</h3>
-<p>通过以下示例可以直观看到不同居中定位方法的效果：</p>
+<h4 id="水平居中（绝对定位-margin-auto）"><a href="#水平居中（绝对定位-margin-auto）" class="headerlink" title="水平居中（绝对定位 + margin: auto）"></a>水平居中（绝对定位 + margin: auto）</h4><figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.horizontal-center</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>; <span class="comment">/* 必须指定宽度 */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="交互式示例-6"><a href="#交互式示例-6" class="headerlink" title="交互式示例"></a>交互式示例</h3><p>通过以下示例可以直观看到不同居中定位方法的效果：</p>
 <div class="tiy-container"><iframe id="tiy0" frameborder="no" src="https://tiy.xecades.xyz/" width="100%" height="100%" onload="(document ? this.contentWindow : this.contentDocument).postMessage('CjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPHRpdGxlPuWxheS4reWumuS9jeekuuS+izwvdGl0bGU+CjxzdHlsZT4KICAuY29udGFpbmVyIHsKICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgIHdpZHRoOiAzMDBweDsKICAgIGhlaWdodDogMjAwcHg7CiAgICBib3JkZXI6IDJweCBzb2xpZCAjMzMzOwogICAgbWFyZ2luLWJvdHRvbTogMjBweDsKICB9CiAgLmJveCB7CiAgICB3aWR0aDogODBweDsKICAgIGhlaWdodDogODBweDsKICAgIGJhY2tncm91bmQtY29sb3I6ICNmZjZiNmI7CiAgICBjb2xvcjogd2hpdGU7CiAgICBkaXNwbGF5OiBmbGV4OwogICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOwogICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgfQogIC5jZW50ZXJlZCB7CiAgICBwb3NpdGlvbjogYWJzb2x1dGU7CiAgICB0b3A6IDUwJTsKICAgIGxlZnQ6IDUwJTsKICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpOwogIH0KICAuaG9yaXpvbnRhbC1jZW50ZXIgewogICAgcG9zaXRpb246IGFic29sdXRlOwogICAgbGVmdDogMDsKICAgIHJpZ2h0OiAwOwogICAgbWFyZ2luOiAwIGF1dG87CiAgICB0b3A6IDUwcHg7CiAgfQogIC5mbGV4LWNlbnRlciB7CiAgICBkaXNwbGF5OiBmbGV4OwogICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOwogIH0KPC9zdHlsZT4KPC9oZWFkPgo8Ym9keT4KICA8aDM+57ud5a+55a6a5L2NICsgdHJhbnNmb3JtIOWxheS4rTwvaDM+CiAgPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KICAgIDxkaXYgY2xhc3M9ImJveCBjZW50ZXJlZCI+5bGF5Lit5YWD57SgPC9kaXY+CiAgPC9kaXY+CiAgCiAgPGgzPue7neWvueWumuS9jSArIG1hcmdpbjogYXV0byDmsLTlubPlsYXkuK08L2gzPgogIDxkaXYgY2xhc3M9ImNvbnRhaW5lciI+CiAgICA8ZGl2IGNsYXNzPSJib3ggaG9yaXpvbnRhbC1jZW50ZXIiPuawtOW5s+WxheS4rTwvZGl2PgogIDwvZGl2PgogIAogIDxoMz5GbGV4Ym94IOWxheS4rTwvaDM+CiAgPGRpdiBjbGFzcz0iY29udGFpbmVyIGZsZXgtY2VudGVyIj4KICAgIDxkaXYgY2xhc3M9ImJveCI+RmxleOWxheS4rTwvZGl2PgogIDwvZGl2Pgo8L2JvZHk+CjwvaHRtbD4=', '*')"></iframe></div>
-<h3 id="7-2-响应式定位">7.2 响应式定位</h3>
-<p>结合媒体查询实现不同屏幕尺寸下的定位调整：</p>
+
+<h3 id="7-2-响应式定位"><a href="#7-2-响应式定位" class="headerlink" title="7.2 响应式定位"></a>7.2 响应式定位</h3><p>结合媒体查询实现不同屏幕尺寸下的定位调整：</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) {</span><br><span class="line">  <span class="selector-class">.sidebar</span> {</span><br><span class="line">    <span class="attribute">position</span>: static; <span class="comment">/* 在小屏幕上改为静态定位 */</span></span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.fixed-header</span> {</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>; <span class="comment">/* 调整固定头部高度 */</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="7-3-定位与-Flexbox-Grid-结合">7.3 定位与 Flexbox/Grid 结合</h3>
-<p>现代布局中，定位常常与 Flexbox 或 Grid 结合使用：</p>
+
+<h3 id="7-3-定位与-Flexbox-Grid-结合"><a href="#7-3-定位与-Flexbox-Grid-结合" class="headerlink" title="7.3 定位与 Flexbox/Grid 结合"></a>7.3 定位与 Flexbox/Grid 结合</h3><p>现代布局中，定位常常与 Flexbox 或 Grid 结合使用：</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> {</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.absolute-element</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="9-性能优化">9. 性能优化</h2>
-<ol>
+
+<h2 id="9-性能优化"><a href="#9-性能优化" class="headerlink" title="9. 性能优化"></a>9. 性能优化</h2><ol>
 <li><strong>减少重排</strong>：频繁修改定位元素的位置会触发重排，影响性能</li>
 <li><strong>合理使用 z-index</strong>：避免设置过高的 z-index 值，可能导致其他元素无法正常显示</li>
 <li><strong>避免过度使用绝对定位</strong>：绝对定位会使元素脱离文档流，可能导致布局混乱</li>
 <li><strong>粘性定位的使用</strong>：在长页面中使用粘性定位时，注意性能影响</li>
 <li><strong>使用 will-change</strong>：对于需要频繁动画的定位元素，使用 <code>will-change: transform</code> 可以提示浏览器提前优化</li>
 </ol>
-<h2 id="10-浏览器兼容性">10. 浏览器兼容性</h2>
-<table>
+<h2 id="10-浏览器兼容性"><a href="#10-浏览器兼容性" class="headerlink" title="10. 浏览器兼容性"></a>10. 浏览器兼容性</h2><table>
 <thead>
 <tr>
 <th>定位方式</th>
@@ -658,8 +623,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <th>Safari</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>相对定位</td>
 <td>6+</td>
 <td>12+</td>
@@ -691,14 +655,12 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <td>32+</td>
 <td>6.1+</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><strong>注意</strong>：Safari 6.1-12.1 仅支持带-webkit-前缀的粘性定位语法，且存在大量 bug，Safari 13+ 才支持无前缀的标准语法</p>
-<h2 id="11-2026年CSS定位新特性">11. 2026年CSS定位新特性</h2>
-<h3 id="11-1-CSS锚点定位（Anchor-Positioning）">11.1 CSS锚点定位（Anchor Positioning）</h3>
-<p>CSS锚点定位是2026年的重要新特性，它允许你用纯CSS将一个元素“拴”在另一个元素上，空间判断和碰撞检测由浏览器处理，无需JavaScript。</p>
+<h2 id="11-2026年CSS定位新特性"><a href="#11-2026年CSS定位新特性" class="headerlink" title="11. 2026年CSS定位新特性"></a>11. 2026年CSS定位新特性</h2><h3 id="11-1-CSS锚点定位（Anchor-Positioning）"><a href="#11-1-CSS锚点定位（Anchor-Positioning）" class="headerlink" title="11.1 CSS锚点定位（Anchor Positioning）"></a>11.1 CSS锚点定位（Anchor Positioning）</h3><p>CSS锚点定位是2026年的重要新特性，它允许你用纯CSS将一个元素“拴”在另一个元素上，空间判断和碰撞检测由浏览器处理，无需JavaScript。</p>
 <p><strong>基本用法</strong>：</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 锚点元素：定义锚点名称 */</span></span><br><span class="line"><span class="selector-class">.add-to-cart</span> {</span><br><span class="line">  <span class="attribute">anchor-name</span>: --cart-button;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 被锚定的元素：使用absolute定位+anchor()函数关联锚点 */</span></span><br><span class="line"><span class="selector-class">.success-tooltip</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="comment">/* 定位到锚点元素的底部 */</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="built_in">anchor</span>(--cart-button bottom);</span><br><span class="line">  <span class="comment">/* 水平居中 */</span></span><br><span class="line">  <span class="attribute">left</span>: <span class="built_in">anchor</span>(--cart-button center);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">50%</span>);</span><br><span class="line">  <span class="comment">/* 可选：inset-area 配合 @position-try 处理边界碰撞 */</span></span><br><span class="line">  <span class="attribute">inset-area</span>: bottom center;</span><br><span class="line">  <span class="attribute">position</span>-try-options: flip-block;</span><br><span class="line">  <span class="comment">/* 搞定，不需要一行JavaScript */</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
 <p><strong>优势</strong>：</p>
 <ul>
 <li>无需JavaScript库（如Popper.js、Floating UI）</li>
@@ -712,19 +674,16 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <li>Safari 17.4+</li>
 <li>低版本浏览器不兼容，需考虑降级方案</li>
 </ul>
-<h3 id="11-2-CSS-Grid与定位的结合">11.2 CSS Grid与定位的结合</h3>
-<p>现代布局中，CSS Grid与定位的结合可以创造更灵活的布局效果：</p>
+<h3 id="11-2-CSS-Grid与定位的结合"><a href="#11-2-CSS-Grid与定位的结合" class="headerlink" title="11.2 CSS Grid与定位的结合"></a>11.2 CSS Grid与定位的结合</h3><p>现代布局中，CSS Grid与定位的结合可以创造更灵活的布局效果：</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.grid-container</span> {</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.overlay-grid</span> {</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">grid-column</span>: <span class="number">1</span> / -<span class="number">1</span>; <span class="comment">/* 跨越所有列 */</span></span><br><span class="line">  <span class="attribute">grid-row</span>: <span class="number">1</span>; <span class="comment">/* 放置在第一行 */</span></span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">2</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="11-3-容器查询（Container-Queries）与定位">11.3 容器查询（Container Queries）与定位</h3>
-<p>容器查询允许你根据父容器尺寸调整子元素的定位方式，而不仅仅是视口尺寸：</p>
+
+<h3 id="11-3-容器查询（Container-Queries）与定位"><a href="#11-3-容器查询（Container-Queries）与定位" class="headerlink" title="11.3 容器查询（Container Queries）与定位"></a>11.3 容器查询（Container Queries）与定位</h3><p>容器查询允许你根据父容器尺寸调整子元素的定位方式，而不仅仅是视口尺寸：</p>
 <figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义容器 */</span></span><br><span class="line"><span class="selector-class">.card-container</span> {</span><br><span class="line">  <span class="attribute">container-type</span>: inline-size;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 根据容器尺寸调整定位 */</span></span><br><span class="line"><span class="keyword">@container</span> (<span class="attribute">max-width</span>: <span class="number">300px</span>) {</span><br><span class="line">  <span class="selector-class">.card-badge</span> {</span><br><span class="line">    <span class="attribute">position</span>: static;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">@container</span> (<span class="attribute">min-width</span>: <span class="number">301px</span>) {</span><br><span class="line">  <span class="selector-class">.card-badge</span> {</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">10px</span>;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="12-高频踩坑指南">12. 高频踩坑指南</h2>
-<h3 id="12-1-fixed-定位被父元素影响">12.1 fixed 定位被父元素影响</h3>
-<p><strong>问题</strong>：设置了 <code>position: fixed</code> 的元素，却没有相对于视口定位，而是相对于某个父元素定位</p>
+
+<h2 id="12-高频踩坑指南"><a href="#12-高频踩坑指南" class="headerlink" title="12. 高频踩坑指南"></a>12. 高频踩坑指南</h2><h3 id="12-1-fixed-定位被父元素影响"><a href="#12-1-fixed-定位被父元素影响" class="headerlink" title="12.1 fixed 定位被父元素影响"></a>12.1 fixed 定位被父元素影响</h3><p><strong>问题</strong>：设置了 <code>position: fixed</code> 的元素，却没有相对于视口定位，而是相对于某个父元素定位</p>
 <p><strong>原因</strong>：父元素设置了 <code>transform</code>、<code>perspective</code>、<code>filter</code> 等属性，导致固定定位的包含块变为该父元素</p>
 <p><strong>解决方案</strong>：避免在需要固定定位的元素的祖先元素上使用这些属性，或调整HTML结构，将固定定位元素移到不受影响的层级</p>
-<h3 id="12-2-sticky-定位不生效">12.2 sticky 定位不生效</h3>
-<p><strong>常见原因</strong>：</p>
+<h3 id="12-2-sticky-定位不生效"><a href="#12-2-sticky-定位不生效" class="headerlink" title="12.2 sticky 定位不生效"></a>12.2 sticky 定位不生效</h3><p><strong>常见原因</strong>：</p>
 <ul>
 <li>没有设置 <code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code> 中的至少一个值</li>
 <li>直接父元素设置了 <code>overflow: hidden</code></li>
@@ -732,25 +691,20 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <li>父元素是flex容器且sticky元素设置了 <code>flex-grow: 1</code></li>
 </ul>
 <p><strong>解决方案</strong>：检查并满足sticky定位的核心生效条件</p>
-<h3 id="12-3-z-index-设了很大值却无法覆盖其他元素">12.3 z-index 设了很大值却无法覆盖其他元素</h3>
-<p><strong>问题</strong>：元素设置了很高的 <code>z-index</code>，但仍然被其他元素覆盖</p>
+<h3 id="12-3-z-index-设了很大值却无法覆盖其他元素"><a href="#12-3-z-index-设了很大值却无法覆盖其他元素" class="headerlink" title="12.3 z-index 设了很大值却无法覆盖其他元素"></a>12.3 z-index 设了很大值却无法覆盖其他元素</h3><p><strong>问题</strong>：元素设置了很高的 <code>z-index</code>，但仍然被其他元素覆盖</p>
 <p><strong>原因</strong>：</p>
 <ul>
 <li>父元素创建了堆叠上下文，子元素的z-index只在该堆叠上下文中有效</li>
 <li>其他元素所在的堆叠上下文层级更高</li>
 </ul>
 <p><strong>解决方案</strong>：检查元素的堆叠上下文，调整HTML结构或z-index值</p>
-<h3 id="12-4-绝对定位元素宽度异常">12.4 绝对定位元素宽度异常</h3>
-<p><strong>问题</strong>：设置了 <code>position: absolute</code> 的元素宽度不是预期值</p>
+<h3 id="12-4-绝对定位元素宽度异常"><a href="#12-4-绝对定位元素宽度异常" class="headerlink" title="12.4 绝对定位元素宽度异常"></a>12.4 绝对定位元素宽度异常</h3><p><strong>问题</strong>：设置了 <code>position: absolute</code> 的元素宽度不是预期值</p>
 <p><strong>原因</strong>：同时设置了 <code>left</code> 和 <code>right</code> 会拉伸元素宽度，未设置width时会撑满包含块</p>
 <p><strong>解决方案</strong>：明确设置width，或只设置一个方向的定位属性</p>
-<h3 id="12-5-相对定位影响布局">12.5 相对定位影响布局</h3>
-<p><strong>问题</strong>：使用相对定位后，其他元素的布局受到影响</p>
+<h3 id="12-5-相对定位影响布局"><a href="#12-5-相对定位影响布局" class="headerlink" title="12.5 相对定位影响布局"></a>12.5 相对定位影响布局</h3><p><strong>问题</strong>：使用相对定位后，其他元素的布局受到影响</p>
 <p><strong>原因</strong>：相对定位元素虽然视觉上偏移，但仍然占据原始位置的空间</p>
 <p><strong>解决方案</strong>：如果不需要保留原始空间，考虑使用绝对定位；或调整其他元素的布局</p>
-<h2 id="13-定位选型指南">13. 定位选型指南</h2>
-<h3 id="13-1-选择合适的定位方式">13.1 选择合适的定位方式</h3>
-<table>
+<h2 id="13-定位选型指南"><a href="#13-定位选型指南" class="headerlink" title="13. 定位选型指南"></a>13. 定位选型指南</h2><h3 id="13-1-选择合适的定位方式"><a href="#13-1-选择合适的定位方式" class="headerlink" title="13.1 选择合适的定位方式"></a>13.1 选择合适的定位方式</h3><table>
 <thead>
 <tr>
 <th>定位方式</th>
@@ -758,8 +712,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <th>特点</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><strong>静态定位</strong></td>
 <td>正常文档流布局</td>
 <td>默认定位方式，无法通过top/left调整位置</td>
@@ -784,17 +737,14 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
 <td>表格头部、侧边栏、导航菜单</td>
 <td>正常布局，滚动到阈值后固定</td>
 </tr>
-</tbody>
-</table>
-<h3 id="13-2-现代布局最佳实践">13.2 现代布局最佳实践</h3>
-<ul>
+</tbody></table>
+<h3 id="13-2-现代布局最佳实践"><a href="#13-2-现代布局最佳实践" class="headerlink" title="13.2 现代布局最佳实践"></a>13.2 现代布局最佳实践</h3><ul>
 <li><strong>Flex/Grid 负责整体布局</strong>：使用Flexbox和Grid进行页面的整体布局，它们更适合处理一维和二维布局</li>
 <li><strong>定位负责局部元素</strong>：使用定位处理局部的徽章、弹窗、提示框、固定导航等</li>
 <li><strong>避免滥用绝对定位</strong>：绝对定位会使元素脱离文档流，过度使用会导致布局混乱和维护困难</li>
 <li><strong>优先使用transform</strong>：修改元素位置时，优先使用<code>transform: translate()</code>，性能优于修改top/left</li>
 </ul>
-<h2 id="14-总结">14. 总结</h2>
-<p>CSS元素的定位是前端开发中非常重要的技能，掌握好各种定位方式的特点和使用场景，可以帮助我们创建更加灵活、美观的页面布局。</p>
+<h2 id="14-总结"><a href="#14-总结" class="headerlink" title="14. 总结"></a>14. 总结</h2><p>CSS元素的定位是前端开发中非常重要的技能，掌握好各种定位方式的特点和使用场景，可以帮助我们创建更加灵活、美观的页面布局。</p>
 <ul>
 <li><strong>相对定位</strong>：适用于微调元素位置，作为绝对定位的父容器</li>
 <li><strong>绝对定位</strong>：适用于精确定位元素，脱离文档流</li>
@@ -924,7 +874,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2026/04/08/hexo-de-matery-zhu-ti-wen-ti-xiu-fu/">
+                <a href="/post/hexo-de-matery-zhu-ti-wen-ti-xiu-fu">
                     <div class="card-image">
                         
                         
@@ -985,7 +935,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2026/04/03/docker-rong-qi-hua-ji-zhu-zhi-nan/">
+                <a href="/post/docker-rong-qi-hua-ji-zhu-zhi-nan">
                     <div class="card-image">
                         
                         
@@ -1171,7 +1121,7 @@ CSS元素的定位是前端开发中非常重要的概念，它允许我们精�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">35.2k</span>
+                        class="white-color">35.1k</span>
             
             
             
