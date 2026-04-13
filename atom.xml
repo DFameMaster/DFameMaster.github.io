@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <author>
-    <name>梧桐</name>
+    <name>栖桐听雨声</name>
   </author>
   <generator uri="https://hexo.io/">Hexo</generator>
   <id>https://dfamemaster.github.io/</id>
   <link href="https://dfamemaster.github.io/" rel="alternate"/>
   <link href="https://dfamemaster.github.io/atom.xml" rel="self"/>
-  <rights>All rights reserved 2026, 梧桐</rights>
-  <subtitle>梧桐的博客</subtitle>
-  <title>梧桐的博客</title>
-  <updated>2026-04-13T01:10:19.762Z</updated>
+  <rights>All rights reserved 2026, 栖桐听雨声</rights>
+  <subtitle>栖桐听雨声的博客</subtitle>
+  <title>栖桐听雨声的博客</title>
+  <updated>2026-04-09T02:00:00.000Z</updated>
   <entry>
     <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
     <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -23,33 +23,13 @@
     <id>https://dfamemaster.github.io/javascript-property-descriptors/</id>
     <link href="https://dfamemaster.github.io/javascript-property-descriptors/"/>
     <published>2026-04-09T02:00:00.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="属性描述符详解"><a href="#属性描述符详解" class="headerlink" title="属性描述符详解"></a>属性描述符详解</h1><h2 id="一、什么是属性描述符？"><a href="#一、什么是属性描述符？"]]>
-    </summary>
+    <summary>详细介绍 JavaScript 中的属性描述符，包括数据属性和访问器属性的特性、定义方法、应用场景以及使用注意事项，帮助开发者深入理解和掌握对象属性的高级特性。</summary>
     <title>属性描述符详解</title>
-    <updated>2026-04-13T01:10:19.762Z</updated>
+    <updated>2026-04-09T02:00:00.000Z</updated>
   </entry>
   <entry>
     <author>
-      <name>梧桐</name>
-    </author>
-    <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
-    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    <category term="Vue" scheme="https://dfamemaster.github.io/tags/Vue/"/>
-    <category term="事件修饰符" scheme="https://dfamemaster.github.io/tags/%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
-    <category term="按键绑定" scheme="https://dfamemaster.github.io/tags/%E6%8C%89%E9%94%AE%E7%BB%91%E5%AE%9A/"/>
-    <id>https://dfamemaster.github.io/vue-event-modifiers/</id>
-    <link href="https://dfamemaster.github.io/vue-event-modifiers/"/>
-    <published>2026-04-08T08:52:27.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="Vue-事件修饰符与按键绑定-从入门到精通"><a href="#Vue-事件修饰符与按键绑定-从入门到精通" class="headerlink" title="Vue 事件修饰符与按键绑定 从入门到精通"></a>Vue 事件修饰符与按键绑定]]>
-    </summary>
-    <title>Vue中的事件修饰符和按键绑定</title>
-    <updated>2026-04-08T12:42:15.742Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="前端开发" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
@@ -60,15 +40,13 @@
     <id>https://dfamemaster.github.io/post/css3-xin-zeng-de-shu-xing</id>
     <link href="https://dfamemaster.github.io/post/css3-xin-zeng-de-shu-xing"/>
     <published>2026-04-08T03:02:11.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="CSS3-新增属性详解"><a href="#CSS3-新增属性详解" class="headerlink" title="CSS3 新增属性详解"></a>CSS3 新增属性详解</h1><p>CSS3 并非 CSS 的单一官方整体版本，而是]]>
-    </summary>
+    <summary>详细介绍CSS3的核心新增属性，包括选择器增强、盒子属性升级、颜色系统升级、背景属性升级、边框属性升级和文本属性升级等多个方面，帮助开发者掌握CSS3的强大功能。</summary>
     <title>CSS3新增属性详解</title>
-    <updated>2026-04-08T12:28:23.650Z</updated>
+    <updated>2026-04-08T03:02:11.000Z</updated>
   </entry>
   <entry>
     <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="技术教程" scheme="https://dfamemaster.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     <category term="Hexo" scheme="https://dfamemaster.github.io/tags/Hexo/"/>
@@ -78,32 +56,13 @@
     <id>https://dfamemaster.github.io/post/hexo-de-matery-zhu-ti-wen-ti-xiu-fu</id>
     <link href="https://dfamemaster.github.io/post/hexo-de-matery-zhu-ti-wen-ti-xiu-fu"/>
     <published>2026-04-08T00:44:44.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="Hexo的matery主题问题修复"><a href="#Hexo的matery主题问题修复" class="headerlink"]]>
-    </summary>
+    <summary>详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题，提供了详细的解决方案和代码示例。</summary>
     <title>Hexo的matery主题问题修复</title>
-    <updated>2026-04-08T01:04:35.590Z</updated>
+    <updated>2026-04-08T00:44:44.000Z</updated>
   </entry>
   <entry>
     <author>
-      <name>梧桐</name>
-    </author>
-    <category term="前端开发" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
-    <category term="元素定位" scheme="https://dfamemaster.github.io/tags/%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D/"/>
-    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    <id>https://dfamemaster.github.io/css-positioning/</id>
-    <link href="https://dfamemaster.github.io/css-positioning/"/>
-    <published>2026-04-07T12:39:49.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="CSS元素的定位"><a href="#CSS元素的定位" class="headerlink"]]>
-    </summary>
-    <title>CSS元素的定位</title>
-    <updated>2026-04-08T12:28:59.934Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="技术教程" scheme="https://dfamemaster.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     <category term="Docker" scheme="https://dfamemaster.github.io/tags/Docker/"/>
@@ -112,15 +71,13 @@
     <id>https://dfamemaster.github.io/post/docker-rong-qi-hua-ji-zhu-zhi-nan</id>
     <link href="https://dfamemaster.github.io/post/docker-rong-qi-hua-ji-zhu-zhi-nan"/>
     <published>2026-04-03T03:04:48.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="Docker容器化技术指南"><a href="#Docker容器化技术指南" class="headerlink" title="Docker容器化技术指南"></a>Docker容器化技术指南</h1><h2 id="1-MySQL-容器化部署"><a]]>
-    </summary>
+    <summary>详细介绍Docker容器化技术，包括MySQL容器化部署、Docker核心命令手册、存储与数据卷管理、镜像构建实践和生产环境最佳实践，帮助开发者掌握容器化技术的核心知识点。</summary>
     <title>Docker容器化技术指南</title>
-    <updated>2026-04-03T03:17:23.714Z</updated>
+    <updated>2026-04-03T03:04:48.000Z</updated>
   </entry>
   <entry>
     <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
     <category term="浏览器" scheme="https://dfamemaster.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
@@ -130,15 +87,13 @@
     <id>https://dfamemaster.github.io/post/liu-lan-qi-xuan-ran-yuan-li</id>
     <link href="https://dfamemaster.github.io/post/liu-lan-qi-xuan-ran-yuan-li"/>
     <published>2026-04-02T03:13:59.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h1><h2 id="引言"><a href="#引言" class="headerlink"]]>
-    </summary>
+    <summary>详细介绍浏览器的渲染原理，包括HTML解析、样式计算、布局、分层、绘制、分块、光栅化、合成等完整渲染流程，以及reflow、repaint等概念和前端性能优化建议，帮助开发者理解浏览器渲染机制并优化网页性能。</summary>
     <title>浏览器渲染原理</title>
-    <updated>2026-04-02T09:26:08.708Z</updated>
+    <updated>2026-04-02T03:13:59.000Z</updated>
   </entry>
   <entry>
     <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
     <category term="浏览器" scheme="https://dfamemaster.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
@@ -148,15 +103,13 @@
     <id>https://dfamemaster.github.io/post/liu-lan-qi-shi-jian-xun-huan-yuan-li</id>
     <link href="https://dfamemaster.github.io/post/liu-lan-qi-shi-jian-xun-huan-yuan-li"/>
     <published>2026-04-02T01:30:29.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="浏览器事件循环原理"><a href="#浏览器事件循环原理" class="headerlink" title="浏览器事件循环原理"></a>浏览器事件循环原理</h1><h2 id="引言"><a href="#引言" class="headerlink"]]>
-    </summary>
+    <summary>详细介绍浏览器的事件循环原理，包括浏览器的进程模型、渲染主线程的工作方式、异步的本质、任务的优先级等内容，帮助前端开发者理解JavaScript异步编程的核心机制。</summary>
     <title>浏览器事件循环原理</title>
-    <updated>2026-04-03T01:06:05.279Z</updated>
+    <updated>2026-04-02T01:30:29.000Z</updated>
   </entry>
   <entry>
     <author>
-      <name>梧桐</name>
+      <name>栖桐听雨声</name>
     </author>
     <category term="技术教程" scheme="https://dfamemaster.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     <category term="Hexo" scheme="https://dfamemaster.github.io/tags/Hexo/"/>
@@ -165,10 +118,8 @@
     <id>https://dfamemaster.github.io/post/ru-he-shi-yong-hexo-zai-github-shang-bu-shu-ge-ren-bo-ke</id>
     <link href="https://dfamemaster.github.io/post/ru-he-shi-yong-hexo-zai-github-shang-bu-shu-ge-ren-bo-ke"/>
     <published>2026-04-01T12:05:36.000Z</published>
-    <summary>
-      <![CDATA[<h1 id="如何使用Hexo在GitHub上部署个人博客"><a href="#如何使用Hexo在GitHub上部署个人博客" class="headerlink"]]>
-    </summary>
+    <summary>详细介绍如何使用Hexo在GitHub上部署个人博客的完整步骤，包括环境准备、Git配置SSH Key、搭建博客、部署到GitHub、编写发布文章、主题配置以及常见问题解决，帮助新手快速搭建自己的个人博客。</summary>
     <title>如何使用Hexo在GitHub上部署个人博客</title>
-    <updated>2026-04-01T13:25:28.568Z</updated>
+    <updated>2026-04-01T12:05:36.000Z</updated>
   </entry>
 </feed>
