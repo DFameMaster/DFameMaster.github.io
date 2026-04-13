@@ -31,6 +31,22 @@
     <author>
       <name>栖桐听雨声</name>
     </author>
+    <category term="前端技术" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"/>
+    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="Vue" scheme="https://dfamemaster.github.io/tags/Vue/"/>
+    <category term="事件修饰符" scheme="https://dfamemaster.github.io/tags/%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    <category term="按键绑定" scheme="https://dfamemaster.github.io/tags/%E6%8C%89%E9%94%AE%E7%BB%91%E5%AE%9A/"/>
+    <id>https://dfamemaster.github.io/vue-event-modifiers/</id>
+    <link href="https://dfamemaster.github.io/vue-event-modifiers/"/>
+    <published>2026-04-08T08:52:27.000Z</published>
+    <summary>详细介绍 Vue 中的事件修饰符和按键绑定功能，包括常用修饰符的使用方法、按键别名、组合快捷键实现以及 Vue2 与 Vue3 的差异，帮助开发者高效处理事件逻辑。</summary>
+    <title>Vue中的事件修饰符和按键绑定</title>
+    <updated>2026-04-08T08:52:27.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>栖桐听雨声</name>
+    </author>
     <category term="前端开发" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
     <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -59,6 +75,21 @@
     <summary>详细记录了Hexo的matery主题中代码块相关问题的修复过程，包括代码框显示两个收缩和复制按钮的问题、收缩按钮不生效的问题以及复制功能不生效的问题，提供了详细的解决方案和代码示例。</summary>
     <title>Hexo的matery主题问题修复</title>
     <updated>2026-04-08T00:44:44.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>栖桐听雨声</name>
+    </author>
+    <category term="前端开发" scheme="https://dfamemaster.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    <category term="CSS" scheme="https://dfamemaster.github.io/tags/CSS/"/>
+    <category term="元素定位" scheme="https://dfamemaster.github.io/tags/%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D/"/>
+    <category term="前端" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <id>https://dfamemaster.github.io/css-positioning/</id>
+    <link href="https://dfamemaster.github.io/css-positioning/"/>
+    <published>2026-04-07T12:39:49.000Z</published>
+    <summary>详细介绍 CSS 中的四种定位方式（相对定位、绝对定位、固定定位和粘性定位），包括它们的特性、使用方法、应用场景以及定位层级（z-index）的控制，帮助开发者掌握前端布局的核心技能。</summary>
+    <title>CSS元素的定位</title>
+    <updated>2026-04-07T12:39:49.000Z</updated>
   </entry>
   <entry>
     <author>
