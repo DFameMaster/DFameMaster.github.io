@@ -10,7 +10,39 @@
   <rights>All rights reserved 2026, 栖桐听雨声</rights>
   <subtitle>栖桐听雨声的博客</subtitle>
   <title>栖桐听雨声</title>
-  <updated>2026-04-17T11:00:00.000Z</updated>
+  <updated>2026-05-12T13:58:56.000Z</updated>
+  <entry>
+    <author>
+      <name>栖桐听雨声</name>
+    </author>
+    <category term="技术教程" scheme="https://dfamemaster.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    <category term="Tampermonkey" scheme="https://dfamemaster.github.io/tags/Tampermonkey/"/>
+    <category term="Userscript" scheme="https://dfamemaster.github.io/tags/Userscript/"/>
+    <category term="油猴" scheme="https://dfamemaster.github.io/tags/%E6%B2%B9%E7%8C%B4/"/>
+    <id>https://dfamemaster.github.io/post/tampermonkey-jiao-ben-tou-bu-yuan-shu-ju-can-kao</id>
+    <link href="https://dfamemaster.github.io/post/tampermonkey-jiao-ben-tou-bu-yuan-shu-ju-can-kao"/>
+    <published>2026-05-12T13:58:56.000Z</published>
+    <summary>详细介绍 Tampermonkey 脚本头部元数据块的各项指令，帮助你编写更加专业、安全的油猴脚本。</summary>
+    <title>Tampermonkey 脚本头部元数据参考</title>
+    <updated>2026-05-12T13:58:56.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>栖桐听雨声</name>
+    </author>
+    <category term="技术教程" scheme="https://dfamemaster.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    <category term="Vite" scheme="https://dfamemaster.github.io/tags/Vite/"/>
+    <category term="JavaScript" scheme="https://dfamemaster.github.io/tags/JavaScript/"/>
+    <category term="前端调试" scheme="https://dfamemaster.github.io/tags/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95/"/>
+    <category term="Console" scheme="https://dfamemaster.github.io/tags/Console/"/>
+    <category term="Webpack" scheme="https://dfamemaster.github.io/tags/Webpack/"/>
+    <id>https://dfamemaster.github.io/post/javascript-console-quan-jie-xi</id>
+    <link href="https://dfamemaster.github.io/post/javascript-console-quan-jie-xi"/>
+    <published>2026-04-29T03:10:05.000Z</published>
+    <summary>深入解析 JavaScript Console 的 15 种类型，从基础 log 到高级 table、trace，以及生产环境下如何安全清理 console 语句。</summary>
+    <title>JavaScript Console 全解析：15 种高效调试用法</title>
+    <updated>2026-04-29T03:10:05.000Z</updated>
+  </entry>
   <entry>
     <author>
       <name>栖桐听雨声</name>
